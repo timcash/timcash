@@ -1,4 +1,6 @@
-### Hi there 👋
+# Hola Mundo
+
+Hello, Tim here. Welcome to my public repos. Most are focused on helping others learn to code or mathematics for fun. Currently looking for work in Software Architecture or as a Director of Engineering.
 
 <!--
 **timcash/timcash** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
