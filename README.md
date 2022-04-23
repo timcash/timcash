@@ -2,12 +2,26 @@
 
 Hello, welcome to my public code. Most are focused on helping others learn or mathematics for the joy of itself. For my access to my professional code please contact me. 
 
+In addition to personal work this repo contains a private encrypted network (PEN) see below...
+
+# Running the private network
+
+Install node.js
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+start a new terminal
+```
+reset
+```
+install node 16
+```
+nvm install 16
+```
+
 # Leadership
-<table> <tr><th>Position</th><th>Result</th></tr><tr><td>Team Leader</td><td>100x analytical coverage of signals intelligence</td></tr></table>
 
 # Engineering
-
-<table> <tr><th>Position</th><th>Result</th></tr><tr><td>Software Architect</td><td>MTTR from 40min to 5min </td></tr> </table>
 
 # Network Defense & Offense
 
