@@ -40,3 +40,9 @@ term_a min_number .. max_number
 ```
 term_a min_year .. max_year
 ```
+
+# Linux
+Find all files of type
+```
+find . -type f -name "*.txt"
+```

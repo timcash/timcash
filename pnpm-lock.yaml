@@ -1,0 +1,21 @@
+lockfileVersion: 5.4
+
+specifiers:
+  sodium-native: ^3.3.0
+
+dependencies:
+  sodium-native: 3.3.0
+
+packages:
+
+  /node-gyp-build/4.4.0:
+    resolution: {integrity: sha512-amJnQCcgtRVw9SvoebO3BKGESClrfXGCUTX9hSn1OuGQTQBOZmVd0Z0OlecpuRksKvbsUqALE8jls/ErClAPuQ==}
+    hasBin: true
+    dev: false
+
+  /sodium-native/3.3.0:
+    resolution: {integrity: sha512-rg6lCDM/qa3p07YGqaVD+ciAbUqm6SoO4xmlcfkbU5r1zIGrguXztLiEtaLYTV5U6k8KSIUFmnU3yQUSKmf6DA==}
+    requiresBuild: true
+    dependencies:
+      node-gyp-build: 4.4.0
+    dev: false

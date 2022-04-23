@@ -1,0 +1,382 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@hyperswarm/dht': ^5.0.24
+  autobase: ^1.0.0-alpha.8
+
+dependencies:
+  '@hyperswarm/dht': 5.0.24
+  autobase: 1.0.0-alpha.8
+
+packages:
+
+  /@hyperswarm/dht/5.0.24:
+    resolution: {integrity: sha512-ODi16mCbPQAIgRm5caELNr0R+j/6rLb7/2jAtknlvHqVtDcwtF2sg3hNe8O1sNG2nMn6DDoW8APmpe5roF5gvQ==}
+    dependencies:
+      '@hyperswarm/secret-stream': 5.2.0
+      b4a: 1.5.0
+      bind-easy: 1.1.2
+      bogon: 1.0.0
+      compact-encoding: 2.6.1
+      compact-encoding-net: 1.0.1
+      debugging-stream: 2.0.0
+      dht-rpc: 5.0.5
+      noise-curve-ed: 1.0.4
+      noise-handshake: 2.2.0
+      record-cache: 1.2.0
+      safety-catch: 1.0.2
+      sodium-universal: 3.1.0
+      utp-native: 2.5.3
+      xache: 1.0.0
+    dev: false
+
+  /@hyperswarm/secret-stream/5.2.0:
+    resolution: {integrity: sha512-GwgLlbJV0DgvdTm0hPfyM4IWcWqJXIPCgkZ/DAh5CJ0HX8WW/4pDw70h7fRK5zBU1XUT6IYO2QAOeqZS+e9Dvg==}
+    dependencies:
+      b4a: 1.5.0
+      noise-curve-ed: 1.0.4
+      noise-handshake: 2.2.0
+      sodium-secretstream: 1.0.2
+      sodium-universal: 3.1.0
+      streamx: 2.12.4
+      timeout-refresh: 2.0.1
+    dev: false
+
+  /autobase/1.0.0-alpha.8:
+    resolution: {integrity: sha512-Dnlw2u0DCZEY6CPbeLW9YI9MIwR+3kCQueqhzt8XZB98frplQrCtzK8DOjju+mYUGdFviyTUmYto9LCF3aXWdQ==}
+    dependencies:
+      codecs: 2.2.0
+      compact-encoding: 2.6.1
+      debounceify: 1.0.0
+      mutexify: 1.4.0
+      safety-catch: 1.0.2
+      streamx: 2.12.4
+    dev: false
+
+  /b4a/1.5.0:
+    resolution: {integrity: sha512-J20PbRmSy38jW9TmqGEwd8xINUCuOm2I2bPQ1sK8LWLxKTbhPh0H48DJ27ff2qmSXvI30WYV0tKzSmGb+oCsXg==}
+    dev: false
+
+  /bind-easy/1.1.2:
+    resolution: {integrity: sha512-2+VjZ87WFdOFnsH4tHnmtf0HF6D2T3ZNdU1t1FYIz2jt4N3tyqbg2J0bYbflXdBkVi3xfVc8Pm8NB062SPvVVA==}
+    dev: false
+
+  /blake2b-wasm/2.4.0:
+    resolution: {integrity: sha512-S1kwmW2ZhZFFFOghcx73+ZajEfKBqhP82JMssxtLVMxlaPea1p9uoLiUZ5WYyHn0KddwbLc+0vh4wR0KBNoT5w==}
+    dependencies:
+      b4a: 1.5.0
+      nanoassert: 2.0.0
+    dev: false
+
+  /blake2b/2.1.4:
+    resolution: {integrity: sha512-AyBuuJNI64gIvwx13qiICz6H6hpmjvYS5DGkG6jbXMOT8Z3WUJ3V1X0FlhIoT1b/5JtHE3ki+xjtMvu1nn+t9A==}
+    dependencies:
+      blake2b-wasm: 2.4.0
+      nanoassert: 2.0.0
+    dev: false
+
+  /bogon/1.0.0:
+    resolution: {integrity: sha512-mXxtlBtnW8koqFWPUBtKJm97vBSKZRpOvxvMRVun33qQXwMNfQzq9eTcQzKzqEoNUhNqF9t8rDc/wakKCcHMTg==}
+    dev: false
+
+  /chacha20-universal/1.0.4:
+    resolution: {integrity: sha512-/IOxdWWNa7nRabfe7+oF+jVkGjlr2xUL4J8l/OvzZhj+c9RpMqoo3Dq+5nU1j/BflRV4BKnaQ4+4oH1yBpQG1Q==}
+    dependencies:
+      nanoassert: 2.0.0
+    dev: false
+
+  /codecs/2.2.0:
+    resolution: {integrity: sha512-+xi2ENsvchtUNa8oBUU58gHgmyN6BEEeZ8NIEgeQ0XnC+AoyihivgZYe+OOiNi+fLy/NUowugwV5gP8XWYDm0Q==}
+    dev: false
+
+  /compact-encoding-net/1.0.1:
+    resolution: {integrity: sha512-N9k1Qwg9b1ENk+TZsZhthzkuMtn3rn4ZinN75gf3/LplE+uaTCKjyaau5sK0m2NEUa/MmR77VxiGfD/Qz1ar0g==}
+    dependencies:
+      compact-encoding: 2.6.1
+    dev: false
+
+  /compact-encoding/2.6.1:
+    resolution: {integrity: sha512-4BqkIbqQG8PbTXo2UQdAKsbp+IswdjPKrEsFg377M/LxVJ/NEmpNuNjVAxcVWbNsUGHcRSQo/L0tWM6KlAvZRg==}
+    dependencies:
+      b4a: 1.5.0
+    dev: false
+
+  /debounceify/1.0.0:
+    resolution: {integrity: sha512-7BeSMAPUohdDJ7sU6Tq2M8HkJR05IqQCeVm/qNemrpOgP5SGZD5WeNOXNfsgbESinz6OjMooWPTGZiKUX91XJQ==}
+    dev: false
+
+  /debugging-stream/2.0.0:
+    resolution: {integrity: sha512-xwfl6wB/3xc553uwtGnSa94jFxnGOc02C0WU2Nmzwr80gzeqn1FX4VcbvoKIhe8L/lPq4BTQttAbrTN94uN8rA==}
+    dependencies:
+      streamx: 2.12.4
+    dev: false
+
+  /dht-rpc/5.0.5:
+    resolution: {integrity: sha512-qcqwacG0m6zxrwTOCrL6LcOcXJRscAH1ykfDsUvGznWuKY1MxOV33IKLgy9pnmoJddyMTMRxFZxRD85/vnt+2g==}
+    dependencies:
+      b4a: 1.5.0
+      bind-easy: 1.1.2
+      compact-encoding: 2.6.1
+      compact-encoding-net: 1.0.1
+      fast-fifo: 1.1.0
+      kademlia-routing-table: 1.0.1
+      nat-sampler: 1.0.1
+      sodium-universal: 3.1.0
+      streamx: 2.12.4
+      time-ordered-set: 1.0.2
+    dev: false
+
+  /fast-fifo/1.1.0:
+    resolution: {integrity: sha512-Kl29QoNbNvn4nhDsLYjyIAaIqaJB6rBx5p3sL9VjaefJ+eMFBWVZiaoguaoZfzEKr5RhAti0UgM8703akGPJ6g==}
+    dev: false
+
+  /function-bind/1.1.1:
+    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
+    dev: false
+
+  /has/1.0.3:
+    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      function-bind: 1.1.1
+    dev: false
+
+  /hmac-blake2b/2.0.0:
+    resolution: {integrity: sha512-JbGNtM1YRd8EQH/2vNTAP1oy5lJVPlBFYZfCJTu3k8sqOUm0rRIf/3+MCd5noVykETwTbun6jEOc+4Tu78ubHA==}
+    dependencies:
+      nanoassert: 1.1.0
+      sodium-native: 3.3.0
+      sodium-universal: 3.1.0
+    dev: false
+
+  /inherits/2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: false
+
+  /is-core-module/2.9.0:
+    resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
+    dependencies:
+      has: 1.0.3
+    dev: false
+
+  /kademlia-routing-table/1.0.1:
+    resolution: {integrity: sha512-dKk19sC3/+kWhBIvOKCthxVV+JH0NrswSBq4sA4eOkkPMqQM1rRuOWte1WSKXeP8r9Nx4NuiH2gny3lMddJTpw==}
+    dev: false
+
+  /mutexify/1.4.0:
+    resolution: {integrity: sha512-pbYSsOrSB/AKN5h/WzzLRMFgZhClWccf2XIB4RSMC8JbquiB0e0/SH5AIfdQMdyHmYtv4seU7yV/TvAwPLJ1Yg==}
+    dependencies:
+      queue-tick: 1.0.0
+    dev: false
+
+  /nanoassert/1.1.0:
+    resolution: {integrity: sha1-TzFS4JVA/eKMdvRLGbvNHVpCR40=}
+    dev: false
+
+  /nanoassert/2.0.0:
+    resolution: {integrity: sha512-7vO7n28+aYO4J+8w96AzhmU8G+Y/xpPDJz/se19ICsqj/momRbb9mh9ZUtkoJ5X3nTnPdhEJyc0qnM6yAsHBaA==}
+    dev: false
+
+  /napi-macros/2.0.0:
+    resolution: {integrity: sha512-A0xLykHtARfueITVDernsAWdtIMbOJgKgcluwENp3AlsKN/PloyO10HtmoqnFAQAcxPkgZN7wdfPfEd0zNGxbg==}
+    dev: false
+
+  /nat-sampler/1.0.1:
+    resolution: {integrity: sha512-yQvyNN7xbqR8crTKk3U8gRgpcV1Az+vfCEijiHu9oHHsnIl8n3x+yXNHl42M6L3czGynAVoOT9TqBfS87gDdcw==}
+    dev: false
+
+  /node-gyp-build/4.4.0:
+    resolution: {integrity: sha512-amJnQCcgtRVw9SvoebO3BKGESClrfXGCUTX9hSn1OuGQTQBOZmVd0Z0OlecpuRksKvbsUqALE8jls/ErClAPuQ==}
+    hasBin: true
+    dev: false
+
+  /noise-curve-ed/1.0.4:
+    resolution: {integrity: sha512-plUUSEOU66FZ9TaBKpk4+fgQeeS+OLlThS2o8a1TxVpMWV2v1izvEnjSpFV9gEPZl4/1yN+S5KqLubFjogqQOw==}
+    dependencies:
+      b4a: 1.5.0
+      nanoassert: 2.0.0
+      sodium-universal: 3.1.0
+    dev: false
+
+  /noise-handshake/2.2.0:
+    resolution: {integrity: sha512-+0mFUc5YSnOPI+4K/7nr6XDGduITaUasPVurzrH03sk6yW+udKxP/qjEwEekRwIpnvcCKYnjiZ9HJenJv9ljZg==}
+    dependencies:
+      b4a: 1.5.0
+      hmac-blake2b: 2.0.0
+      nanoassert: 2.0.0
+      sodium-universal: 3.1.0
+    dev: false
+
+  /path-parse/1.0.7:
+    resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
+    dev: false
+
+  /queue-tick/1.0.0:
+    resolution: {integrity: sha512-ULWhjjE8BmiICGn3G8+1L9wFpERNxkf8ysxkAer4+TFdRefDaXOCV5m92aMB9FtBVmn/8sETXLXY6BfW7hyaWQ==}
+    dev: false
+
+  /readable-stream/3.6.0:
+    resolution: {integrity: sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==}
+    engines: {node: '>= 6'}
+    dependencies:
+      inherits: 2.0.4
+      string_decoder: 1.3.0
+      util-deprecate: 1.0.2
+    dev: false
+
+  /record-cache/1.2.0:
+    resolution: {integrity: sha512-kyy3HWCez2WrotaL3O4fTn0rsIdfRKOdQQcEJ9KpvmKmbffKVvwsloX063EgRUlpJIXHiDQFhJcTbZequ2uTZw==}
+    dependencies:
+      b4a: 1.5.0
+    dev: false
+
+  /resolve/1.22.0:
+    resolution: {integrity: sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==}
+    hasBin: true
+    dependencies:
+      is-core-module: 2.9.0
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
+    dev: false
+
+  /safe-buffer/5.2.1:
+    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+    dev: false
+
+  /safety-catch/1.0.2:
+    resolution: {integrity: sha512-C1UYVZ4dtbBxEtvOcpjBaaD27nP8MlvyAQEp2fOTOEe6pfUpk1cDUxij6BR1jZup6rSyUTaBBplK7LanskrULA==}
+    dev: false
+
+  /sha256-universal/1.2.1:
+    resolution: {integrity: sha512-ghn3muhdn1ailCQqqceNxRgkOeZSVfSE13RQWEg6njB+itsFzGVSJv+O//2hvNXZuxVIRyNzrgsZ37SPDdGJJw==}
+    dependencies:
+      b4a: 1.5.0
+      sha256-wasm: 2.2.2
+    dev: false
+
+  /sha256-wasm/2.2.2:
+    resolution: {integrity: sha512-qKSGARvao+JQlFiA+sjJZhJ/61gmW/3aNLblB2rsgIxDlDxsJPHo8a1seXj12oKtuHVgJSJJ7QEGBUYQN741lQ==}
+    dependencies:
+      b4a: 1.5.0
+      nanoassert: 2.0.0
+    dev: false
+
+  /sha512-universal/1.2.1:
+    resolution: {integrity: sha512-kehYuigMoRkIngCv7rhgruLJNNHDnitGTBdkcYbCbooL8Cidj/bS78MDxByIjcc69M915WxcQTgZetZ1JbeQTQ==}
+    dependencies:
+      b4a: 1.5.0
+      sha512-wasm: 2.3.4
+    dev: false
+
+  /sha512-wasm/2.3.4:
+    resolution: {integrity: sha512-akWoxJPGCB3aZCrZ+fm6VIFhJ/p8idBv7AWGFng/CZIrQo51oQNsvDbTSRXWAzIiZJvpy16oIDiCCPqTe21sKg==}
+    dependencies:
+      b4a: 1.5.0
+      nanoassert: 2.0.0
+    dev: false
+
+  /siphash24/1.3.1:
+    resolution: {integrity: sha512-moemC3ZKiTzH29nbFo3Iw8fbemWWod4vNs/WgKbQ54oEs6mE6XVlguxvinYjB+UmaE0PThgyED9fUkWvirT8hA==}
+    dependencies:
+      nanoassert: 2.0.0
+    dev: false
+
+  /sodium-javascript/0.8.0:
+    resolution: {integrity: sha512-rEBzR5mPxPES+UjyMDvKPIXy9ImF17KOJ32nJNi9uIquWpS/nfj+h6m05J5yLJaGXjgM72LmQoUbWZVxh/rmGg==}
+    dependencies:
+      blake2b: 2.1.4
+      chacha20-universal: 1.0.4
+      nanoassert: 2.0.0
+      sha256-universal: 1.2.1
+      sha512-universal: 1.2.1
+      siphash24: 1.3.1
+      xsalsa20: 1.2.0
+    dev: false
+
+  /sodium-native/3.3.0:
+    resolution: {integrity: sha512-rg6lCDM/qa3p07YGqaVD+ciAbUqm6SoO4xmlcfkbU5r1zIGrguXztLiEtaLYTV5U6k8KSIUFmnU3yQUSKmf6DA==}
+    requiresBuild: true
+    dependencies:
+      node-gyp-build: 4.4.0
+    dev: false
+
+  /sodium-secretstream/1.0.2:
+    resolution: {integrity: sha512-AsWztbBHhHid+w5g28ftXA0mTrS52Dup7FYI0GR7ri1TQTlVsw0z//FNlhIqWsgtBctO/DxQosacbElCpmdcZw==}
+    dependencies:
+      b4a: 1.5.0
+      sodium-universal: 3.1.0
+    dev: false
+
+  /sodium-universal/3.1.0:
+    resolution: {integrity: sha512-N2gxk68Kg2qZLSJ4h0NffEhp4BjgWHCHXVlDi1aG1hA3y+ZeWEmHqnpml8Hy47QzfL1xLy5nwr9LcsWAg2Ep0A==}
+    dependencies:
+      blake2b: 2.1.4
+      chacha20-universal: 1.0.4
+      nanoassert: 2.0.0
+      resolve: 1.22.0
+      sha256-universal: 1.2.1
+      sha512-universal: 1.2.1
+      siphash24: 1.3.1
+      sodium-javascript: 0.8.0
+      sodium-native: 3.3.0
+      xsalsa20: 1.2.0
+    dev: false
+
+  /streamx/2.12.4:
+    resolution: {integrity: sha512-K3xdIp8YSkvbdI0PrCcP0JkniN8cPCyeKlcZgRFSl1o1xKINCYM93FryvTSOY57x73pz5/AjO5B8b9BYf21wWw==}
+    dependencies:
+      fast-fifo: 1.1.0
+      queue-tick: 1.0.0
+    dev: false
+
+  /string_decoder/1.3.0:
+    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
+    dependencies:
+      safe-buffer: 5.2.1
+    dev: false
+
+  /supports-preserve-symlinks-flag/1.0.0:
+    resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
+    engines: {node: '>= 0.4'}
+    dev: false
+
+  /time-ordered-set/1.0.2:
+    resolution: {integrity: sha512-vGO99JkxvgX+u+LtOKQEpYf31Kj3i/GNwVstfnh4dyINakMgeZCpew1e3Aj+06hEslhtHEd52g7m5IV+o1K8Mw==}
+    dev: false
+
+  /timeout-refresh/1.0.3:
+    resolution: {integrity: sha512-Mz0CX4vBGM5lj8ttbIFt7o4ZMxk/9rgudJRh76EvB7xXZMur7T/cjRiH2w4Fmkq0zxf2QpM8IFvOSRn8FEu3gA==}
+    dev: false
+
+  /timeout-refresh/2.0.1:
+    resolution: {integrity: sha512-SVqEcMZBsZF9mA78rjzCrYrUs37LMJk3ShZ851ygZYW1cMeIjs9mL57KO6Iv5mmjSQnOe/29/VAfGXo+oRCiVw==}
+    dev: false
+
+  /unordered-set/2.0.1:
+    resolution: {integrity: sha512-eUmNTPzdx+q/WvOHW0bgGYLWvWHNT3PTKEQLg0MAQhc0AHASHVHoP/9YytYd4RBVariqno/mEUhVZN98CmD7bg==}
+    dev: false
+
+  /util-deprecate/1.0.2:
+    resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    dev: false
+
+  /utp-native/2.5.3:
+    resolution: {integrity: sha512-sWTrWYXPhhWJh+cS2baPzhaZc89zwlWCfwSthUjGhLkZztyPhcQllo+XVVCbNGi7dhyRlxkWxN4NKU6FbA9Y8w==}
+    engines: {node: '>=8.12'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      napi-macros: 2.0.0
+      node-gyp-build: 4.4.0
+      readable-stream: 3.6.0
+      timeout-refresh: 1.0.3
+      unordered-set: 2.0.1
+    dev: false
+
+  /xache/1.0.0:
+    resolution: {integrity: sha512-f4fYGFVY734UT4OOyTaKMdWdJ5asbMWKZvmQcoMFBeFNw0UOt0dEJTOlJeKmsduKqPj0UWsIx4SB76oCZagllQ==}
+    dev: false
+
+  /xsalsa20/1.2.0:
+    resolution: {integrity: sha512-FIr/DEeoHfj7ftfylnoFt3rAIRoWXpx2AoDfrT2qD2wtp7Dp+COajvs/Icb7uHqRW9m60f5iXZwdsJJO3kvb7w==}
+    dev: false

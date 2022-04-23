@@ -1,0 +1,20 @@
+{
+  "name": "timnet",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "networking for p2p mesh",
+  "main": "main.js",
+  "bin": "./bin.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "p2p",
+    "networking"
+  ],
+  "author": "timcash",
+  "license": "ISC",
+  "dependencies": {
+    "@hyperswarm/dht": "^5.0.24"
+  }
+}
