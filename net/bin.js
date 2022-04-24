@@ -4,10 +4,10 @@ import DHT from "@hyperswarm/dht";
 
 const node = new DHT();
 
-const remotePublicKey = Buffer.from(
-  "9dc32b14716463f3fc7d4c69bfefd6050e4be76091c674a124eda66ef459805b",
-  "hex"
-);
+// public_key = args[2] from command line
+const public_key = process.argv[2];
+
+const remotePublicKey = Buffer.from(public_key, "hex");
 const encryptedSocket = node.connect(remotePublicKey);
 
 encryptedSocket.on("open", function () {
