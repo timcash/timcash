@@ -23,7 +23,16 @@ Tunnels have 4 parts to setup
 4. Run the Tunnel and begin serving traffic.
 install cloudflared on debian
 ```
-wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
+curl -O -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+
+mv cloudflared-linux-amd64 cloudflared
+
+chmod a+x cloudflared
+```
+
+Update cloudflared
+```
+cloudflared update
 ```
 
 ```
@@ -52,7 +61,7 @@ cloudflared tunnel route dns <UUID or NAME> <hostname>
 ```
 Run the tunnel with specific config
 ```
-cloudflared tunnel --config /path/your-config-file.yaml run
+cloudflared tunnel --config cf_config.yml run
 ```
 to run a hello world server
 ```
