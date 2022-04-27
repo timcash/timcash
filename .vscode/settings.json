@@ -1,0 +1,11 @@
+{
+  "[zig]": {
+    "editor.defaultFormatter": "tiehuis.zig",
+    "zig.buildOnSave": true
+  },
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "zigLanguageClient.path": "/Users/dev/code/zig-tools/zls/zig-out/bin/zls"
+}
