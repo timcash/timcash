@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iframe</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  </head>
+  <style>
+    /* disable scrolling */
+    body {
+      overflow: hidden;
+      /* transition transition over 1 second */
+      transition: 0.2s;
+    }
+    .box {
+      border: 4px solid rgb(20, 20, 120);
+      width: 350px;
+      height: 350px;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .frame {
+      /* 350 width and height */
+      width: 300px;
+      height: 300px;
+    }
+
+    /* remove iframe borders */
+    .frame {
+      border: 0;
+    }
+  </style>
+
+  <body>
+    <main>
+      <div class="box">1</div>
+      <div class="box">3</div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </main>
+    <script>
+      // a structure to track body_x and body_y
+      let body = {
+        x: 0,
+        y: 0,
+      };
+
+      document.addEventListener("keydown", function (event) {
+        // on left key add 100px to the X translation of the body
+        if (event.keyCode === 37) {
+          body.x += 50;
+          // translate the body x coordinate
+          document.querySelector(
+            "body"
+          ).style.transform = `translate(${body.x}px, ${body.y}px)`;
+        }
+        // on right key subtract 100px from the X translation of the body
+        if (event.keyCode === 39) {
+          body.x -= 50;
+          // translate the body x coordinate
+          document.querySelector(
+            "body"
+          ).style.transform = `translate(${body.x}px, ${body.y}px)`;
+        }
+        // on up key add 100px to the Y translation of the body
+        if (event.keyCode === 38) {
+          body.y += 50;
+          // translate the body y coordinate
+          document.querySelector(
+            "body"
+          ).style.transform = `translate(${body.x}px, ${body.y}px)`;
+        }
+        // on down key subtract 100px from the Y translation of the body
+        if (event.keyCode === 40) {
+          body.y -= 50;
+          // translate the body y coordinate
+          document.querySelector(
+            "body"
+          ).style.transform = `translate(${body.x}px, ${body.y}px)`;
+        }
+      });
+
+      let boxElement;
+      boxElements = document.getElementsByClassName("box");
+      createObserver();
+
+      function createObserver() {
+        let observer;
+
+        let options = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.9,
+        };
+
+        observer = new IntersectionObserver(handleIntersect, options);
+        //observer.observe(boxElements);
+        // for each element observed, call the handleIntersect function
+        for (let i = 0; i < boxElements.length; i++) {
+          observer.observe(boxElements[i]);
+        }
+      }
+
+      function handleIntersect(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            //if the entry hass class "loaded", do nothing
+            if (entry.target.classList.contains("loaded")) {
+              return;
+            }
+            console.log("added iframe");
+            // add css class called loaded
+            entry.target.classList.add("loaded");
+
+            // set the innerHTML to 1
+            entry.target.innerHTML = 1;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
