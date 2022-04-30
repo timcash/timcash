@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>April 29 2022</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://unpkg.com/h3-js@3.7.2/dist/h3-js.umd.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        // set cavnas size to max size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // fill the canvas with a gradient from black black to transparent
+        // left ro right
+        var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop(0, "#000000");
+        gradient.addColorStop(1, "#222222");
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // create a list to hold functions that represet a frame of animation
+        var frameList = [];
+
+        // create frame 1 with a gradient from pink to orange to red
+        var frame1 = function () {
+          // create a gradient from pink to orange to red
+          var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+          gradient.addColorStop(0, "#ff00ff");
+          gradient.addColorStop(0.5, "#ffa500");
+          gradient.addColorStop(1, "#ff0000");
+          // set the fill style to the gradient
+          context.fillStyle = gradient;
+          // fill the canvas
+          context.fillRect(0, 0, canvas.width, canvas.height);
+        };
+
+        // create frame 2 with a gradient from black to white top to bottom
+        var frame2 = function () {
+          // create a gradient from black to white top to bottom
+          var gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+          gradient.addColorStop(0, "#000000");
+          gradient.addColorStop(1, "#ffffff");
+          // set the fill style to the gradient
+          context.fillStyle = gradient;
+          // fill the canvas
+          context.fillRect(0, 0, canvas.width, canvas.height);
+        };
+
+        // create 60 pairs of [x, y] coordinates
+        var coordinates = [];
+        for (var i = 0; i < 60; i++) {
+          coordinates.push([
+            Math.random() * canvas.width,
+            Math.random() * canvas.height,
+          ]);
+        }
+
+        // create a function to draw a circle at a given [x, y] coordinate
+        function drawCircle(x, y) {
+          // set the fill style to red
+          context.fillStyle = "#ff0000";
+          // draw a circle at the given [x, y] coordinate
+          context.beginPath();
+          context.arc(x, y, 10, 0, 2 * Math.PI);
+          context.fill();
+        }
+
+        // frame 3 a list of 10 circles drawn one at a time in 1/10th of a second
+        var frame3 = function (frame_count, subframe_count) {
+          // set the fill style to black
+          context.fillStyle = "#000000";
+          // fill the canvas
+          context.fillRect(0, 0, canvas.width, canvas.height);
+          // start a asynchronous for loop to draw 10 circles one at a time
+          for (var i = 0; i < subframe_count; i++) {
+            // loop through the list of coordinates until >= subframe_count
+
+            // draw a circle at the current coordinate
+            drawCircle(coordinates[i][0], coordinates[i][1]);
+          }
+        };
+
+        function getHexagonCoordinates(x, y) {
+          // Get the set of hexagons within a polygon
+          const polygon = [
+            [10, 50],
+            [50, 50],
+            [50, 10],
+          ];
+          const hexagons = h3.polyfill(polygon, 1);
+          const coordinates = h3.h3SetToMultiPolygon(hexagons, true);
+          return coordinates;
+        }
+
+        function drawHexagon(color, hex_cords) {
+          const zoom = 4;
+          // set the line style to red
+          context.strokeStyle = color;
+          // draw a hexagon at the given [x, y] coordinate
+          context.beginPath();
+          context.moveTo(hex_cords[0][0], hex_cords[0][1]);
+          // loop through the coordinates starting from 1
+          for (var i = 0; i < hex_cords.length; i++) {
+            // const x
+            const x = hex_cords[i][0] * zoom;
+            const y = hex_cords[i][1] * zoom;
+            // log the x and y coordinates
+            context.lineTo(x, y);
+            context.stroke();
+          }
+          //context.closePath();
+        }
+
+        // random hsl color
+        function randomHslColor() {
+          // create a random number between 0 and 360
+          var h = Math.random() * 360;
+          // return the hsl color
+          return "hsl(" + h + "," + 80 + "%," + 80 + "%)";
+        }
+
+        // frame 4 draw a grid of hexagons
+        var frame4 = function (frame_count, subframe_count) {
+          if (subframe_count == 1) {
+            // set the fill style to black
+            context.fillStyle = "#000000";
+            // fill the canvas
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            // get the coordinates of the hexagons
+            const hex_cords = getHexagonCoordinates(80, 100);
+            // log the coordinates
+
+            // loop through the coordinates
+            for (var i = 0; i < hex_cords.length; i++) {
+              // draw a hexagon at the current coordinate
+              drawHexagon(randomHslColor(), hex_cords[i][0]);
+            }
+          }
+        };
+
+        // add frame 4 to the list of frames
+        frameList.push(frame4);
+
+        // create a counter to keep track of the current frame
+        let counter = 0;
+        let sub_counter = 1;
+        // get the main-text element
+        let mainText = document.getElementById("main-text");
+
+        // add frame 1 to the list
+        frameList.push(frame1);
+        // add frame 2 to the list
+        frameList.push(frame2);
+        // add frame 3 to the list
+        frameList.push(frame3);
+
+        // start a one second loop
+        setInterval(function () {
+          // increment the sub_counter
+          sub_counter++;
+          // if sub_counter is greater than or equal to 60 then reset the sub_counter to 1
+          if (sub_counter >= 60) {
+            sub_counter = 1;
+            // increment the counter
+            counter++;
+            //if the counter is greater than the length of the list
+            if (counter >= frameList.length) {
+              // reset the counter
+              counter = 0;
+            }
+          }
+
+          // call the current frame
+          frameList[counter](counter, sub_counter);
+          // set the innerHTML of the main-text element to the current counter
+          mainText.innerHTML = `${counter} ${sub_counter}`;
+        }, 1000 / 60);
+      };
+    </script>
+    <style>
+      body {
+        /* 100vw and 100vh */
+        height: 100vh;
+        width: 100vw;
+        color: white;
+        /* font Verdana */
+        font-family: Verdana, sans-serif;
+      }
+      canvas {
+        /* 100vw and 100vh */
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <canvas id="canvas"></canvas>
+      <h1 id="main-text">how we divide space?</h1>
+    </main>
+  </body>
+</html>

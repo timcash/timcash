@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Template</title>
+    <title>imageutils</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        // set cavnas size to max size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // fill the canvas with a gradient from black black to transparent
+        // left ro right
+        var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop(0, "black");
+        gradient.addColorStop(1, "transparent");
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        // no argument defaults to image/png; image/jpeg, etc also work on some
+        // implementations -- image/png is the only one that must be supported per spec.
+        window.location = canvas.toDataURL("image/png");
+      };
+    </script>
+    <!-- gradient background from white to black -->
+    <style>
+      body {
+        /* 100vw and 100vh */
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
   </head>
-  <!-- gradient background from white to black -->
-  <style>
-    body {
-      /* 100vw and 100vh */
-      height: 100vh;
-      width: 100vw;
-      background: linear-gradient(to left, white, black);
-      color: white;
-    }
 
-    /* h1 are large and bold with padding on top and bottom */
-    h1 {
-      font-size: 2em;
-      font-weight: bold;
-      padding: 1em 0 1em 0;
-    }
-  </style>
   <body>
-    <main></main>
+    <main>
+      <canvas id="canvas" width="200" height="200"></canvas>
+    </main>
   </body>
 </html>
