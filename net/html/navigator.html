@@ -1,0 +1,43 @@
+<!-- a web page with a black background -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Navigation</title>
+    <!-- fix viewport for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+    <style></style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>XY Plane</h1>
+    </div>
+    <div id="subheader">
+      <h2>Movement - 0001</h2>
+    </div>
+    <div id="stage">
+      <p id="turn">north east south west</p>
+      <p id="partition">Explore the Map</p>
+      <button id="play_button">Play</button>
+      <canvas id="stage1"></canvas>
+      <audio controls preload="auto">
+        <source src="mp3/sample.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <div id="nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+    <script>
+      // create a canvas element
+      const canvas = document.getElementById("stage1");
+      const ctx = canvas.getContext("2d");
+    </script>
+  </body>
+</html>

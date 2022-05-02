@@ -72,6 +72,14 @@ body {
     /* make the navbar text size 1.5em */
   }
 
+  #play_button {
+    padding: 20px;
+    border: 1px solid white;
+    bottom: 15px;
+    right: 15px;
+    position: absolute;
+  }
+
   p {
     padding-bottom: 5px;
     color: hsl(0, 0%, 85%);

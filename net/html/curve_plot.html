@@ -16,11 +16,11 @@
       <h1>Curve Plot</h1>
     </div>
     <div id="subheader">
-      <h2>Adaptive Symbolic Kommunication - 0002</h2>
+      <h2>Bézier curve control points - 0002</h2>
     </div>
     <div id="stage">
-      <p id="turn">4 points and parameter t</p>
-      <p id="partition">scale t from 0 - 1</p>
+      <p id="turn">4 points with brownian motion and parameter t.</p>
+      <p id="partition">0 &lt t &gt 1</p>
       <canvas id="stage1"></canvas>
     </div>
     <div id="nav">
@@ -34,9 +34,16 @@
       // create a canvas element
       const canvas = document.getElementById("stage1");
       const ctx = canvas.getContext("2d");
+
       // set canvas width and height
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      const MAX_X = canvas.width / 2 - 100;
+      const MAX_Y = canvas.height / 2 - 100;
+      const MIN_X = -canvas.width / 2 + 100;
+      const MIN_Y = -canvas.height / 2 + 100;
+
       // convert polar to cartesian coordinates
       function polarToCartesian(r, theta) {
         return {
@@ -54,8 +61,8 @@
       }
 
       // given float:0-1 return hsl:0-360
-      function hsl(h_01, opacity) {
-        return `hsla(${h_01 * 360}, 100%, 50%, ${opacity})`;
+      function hsl(hue_01, opacity) {
+        return `hsla(${hue_01 * 360}, 100%, 50%, ${opacity})`;
       }
 
       // {start, end, color} => dra {
@@ -107,19 +114,73 @@
         y: canvas.height / 2,
       };
 
+      function drawControlPoint({ x, y, color }) {
+        ctx.beginPath();
+        ctx.arc(x + center.x, y + center.y, 1, 0, 2 * Math.PI);
+        ctx.strokeStyle = color;
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      // given a list of points use gravity to move them around
+      function forces(x, y, points) {
+        // apply vx and vy to each point
+        for (let i = 0; i < points.length; i++) {
+          const point = points[i];
+          const vx = point.vx;
+          const vy = point.vy;
+          point.x += vx;
+          point.y += vy;
+          if (point.x < MIN_X) {
+            point.x = MIN_X;
+            point.vx = -vx;
+          }
+          if (point.x > MAX_X) {
+            point.x = MAX_X;
+            point.vx = -vx;
+          }
+          if (point.y < MIN_Y) {
+            point.y = MIN_Y;
+            point.vy = -vy;
+          }
+          if (point.y > MAX_Y) {
+            point.y = MAX_Y;
+            point.vy = -vy;
+          }
+        }
+
+        return points;
+      }
+
+      // create a random point in the canvas
+      function randomPoint() {
+        const x = Math.random() * canvas.width - center.x;
+        const y = Math.random() * canvas.height - center.y;
+        return {
+          x: x * 0.9,
+          y: y * 0.9,
+          vx: Math.random() - 0.5,
+          vy: Math.random() - 0.5,
+          color: "white",
+        };
+      }
+
+      // create the 4 points of a square lentgh 2
+      let points = [randomPoint(), randomPoint(), randomPoint(), randomPoint()];
+
       function drawDots(elapsed) {
-        // create the 4 points of a square lentgh 20
-        const p0 = { x: -200, y: 0 };
-        const p1 = { x: -200, y: 200 };
-        const p2 = { x: 200, y: 200 };
-        const p3 = { x: 200, y: 0 };
+        points = forces(0, 0, points);
+        // draw the 4 control points
+        points.forEach((point) => {
+          //drawControlPoint(point);
+        });
         const t = (elapsed % 1000) / 1000;
-        const p = bezier(t, p1, p0, p3, p2);
+        const p = bezier(t, ...points);
         const x = p.x + center.x;
         const y = p.y + center.y;
         const o = scale(y, 0, 200, 0, 1);
 
-        // get a random number between 10 and 100
+        // get a random number between 10 and 15
         const r = Math.random() * (15 - 10) + 10;
         // draw a 5px dot at p
         ctx.beginPath();
@@ -136,19 +197,6 @@
       const frames_per_second = 60;
       const ms_per_second = 1000;
 
-      // create diagonal gradient from black to dark grey
-      const gradient = ctx.createLinearGradient(
-        canvas.width,
-        canvas.height,
-        0,
-        0
-      );
-      gradient.addColorStop(0, "#000");
-      gradient.addColorStop(0.5, "#000");
-      gradient.addColorStop(1, "#111");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       // start a request animation frame loop
       async function step(timestamp) {
         if (start === undefined) {
@@ -156,11 +204,11 @@
         }
         const elapsed = timestamp - start; // in milliseconds
         const frame_number = Math.floor(elapsed / 60);
-        if (frame_number > prev_frame_number) {
-          // draw dots
-          drawDots(elapsed);
-          prev_frame_number = frame_number;
-        }
+        // if (frame_number > prev_frame_number) {
+        //   // draw dots
+        //   prev_frame_number = frame_number;
+        // }
+        drawDots(elapsed);
         window.requestAnimationFrame(step);
       }
 

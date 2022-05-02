@@ -21,7 +21,11 @@
     <div id="stage">
       <p id="turn">The tree mixes soil and sky</p>
       <p id="partition">Seeds explode with life</p>
+      <button id="play_button">Play</button>
       <canvas id="stage1"></canvas>
+      <audio controls preload="auto">
+        <source src="mp3/sample.mp3" type="audio/mpeg" />
+      </audio>
     </div>
     <div id="nav">
       <ul>
@@ -34,6 +38,42 @@
       // create a canvas element
       const canvas = document.getElementById("stage1");
       const ctx = canvas.getContext("2d");
+      const audio_mp3 = document.createElement("audio");
+      let audioCtx;
+      const button = document.querySelector("#play_button");
+
+      // load music
+      let music_loaded = false;
+      let playing = false;
+      function loadMusic() {
+        if (audio_mp3.canPlayType("audio/mpeg")) {
+          music_loaded = true;
+          audio_mp3.setAttribute("src", "mp3/sample.mp3");
+        }
+        if (music_loaded) {
+          audio_mp3.currentTime = 5;
+          audio_mp3.play();
+        }
+        if (audio_mp3.ended) {
+          audio_mp3.currentTime = 0;
+          audio_mp3.play();
+        }
+      }
+
+      button.addEventListener(
+        "click",
+        function () {
+          audioCtx = new AudioContext();
+          loadMusic();
+          console.log("clicked");
+          // check if context is in suspended state (autoplay policy)
+          if (audioCtx.state === "suspended") {
+            audioCtx.resume();
+          }
+        },
+        false
+      );
+
       // set canvas width and height
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -155,7 +195,7 @@
         const turns_per_second = 0.25;
         const seconds_elapsed = elapsed / 1000;
         const current_turn = turns_per_second * seconds_elapsed;
-        const tail_turn = current_turn - 1;
+        const tail_turn = current_turn - 0.5;
         const partitions = 360;
         const turns_per_partition = 1 / partitions;
 
@@ -163,7 +203,7 @@
         const p1 = { x: -100, y: 200 };
         const p2 = { x: 100, y: 200 };
         const p3 = { x: 200, y: 0 };
-        drawGradient();
+        //drawGradient();
 
         for (let i = tail_turn; i <= current_turn; i += turns_per_partition) {
           if (i < 0) {
@@ -185,7 +225,6 @@
 
           const y = p.y;
           const o = scale(y, 0, 200, 0, 1);
-          debugger;
           const line = generateLine(idx, mult, partitions, o);
           drawLine(line);
         }
