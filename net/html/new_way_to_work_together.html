@@ -1,48 +1,111 @@
 <!-- a web page with a black background -->
 <html>
-<head>
-<meta charset="utf-8">
-<!-- fix viewport for mobile -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Way to Work Together</title>
-<!-- style with background black and text color white -->
-<style>
-body {
-    background-color: black;
-    color: white;
-    /* make the body 100 view height and 100 view width */
-    height: 100vh;
-    width: 100vw;
-    /* add 1em padding to the body */
-    padding: 1em;
-    /* use text without a serif font */
-    font-family: sans-serif;
-}
-/* make the links light green with no underline */
-a:link {
-    color: lightgreen;
-    text-decoration: none;
-}
-</style>
-</head>
-<body>
-<div id="container">
-<div id="header">
-<h1>New Way to Work Together</h1>
-</div>
-<div id="nav">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="new_way_to_work_together.html">New Way to Work Together</a></li>
-<!-- item semiotics -->
-<li><a href="semiotics.html">Semiotics</a></li>
-<!-- item image_utils -->
-<li><a href="image_utils.html">Image Utils</a></li>
-<!-- item camping_equipment -->
-<li><a href="camping_equipment.html">Camping Equipment</a></li>
-</ul>
-</div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <!-- fix viewport for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- import css/reset.css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <title>Scaling Team Work</title>
+    <!-- style with background black and text color white -->
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        padding: 30px;
+        /* make the body 100 view height and 100 view width */
+        height: 100vh;
+        width: 100vw;
+        /* use text without a serif font */
+        font-family: sans-serif;
+        /*  use flex for a 3 row layout */
+        display: flex;
+        flex-direction: column;
+        flex: 1 auto 1;
+        /* make the flex wrap around */
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+        color: grey;
+      }
+      /* make the links with no underline */
+      a:link {
+        color: rgb(89, 194, 229);
+        text-decoration: none;
+      }
+      /* visited links */
+      a:visited {
+        color: rgb(89, 194, 229);
+      }
+      #nav ul {
+        /* no overflow */
+        overflow: hidden;
+
+        /* no padding no margin */
+        padding: 0;
+        margin: 0;
+
+        /* flexbox left to right nav */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: white;
+      }
+      #stage {
+        flex: 1;
+      }
+      #header {
+        flex: 0;
+        padding-bottom: 5px;
+      }
+      #subheader {
+        flex: 0;
+        padding-bottom: 20px;
+      }
+      /* all li items under the nav id */
+      #nav ul li {
+        /*  remove bullets from the navbar */
+        list-style-type: none;
+        padding: 10px;
+        /* make the navbar text size 1.5em */
+      }
+
+      p {
+        padding-bottom: 5px;
+        color: hsl(0, 0%, 85%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Scaling Team Work</h1>
+    </div>
+    <div id="subheader">
+      <h2>Adapting Symbols and Backgrounds - 0001</h2>
+    </div>
+    <div id="stage">
+      <p>The tree mixes soil and sky</p>
+      <p>Seeds explode with life</p>
+    </div>
+    <div id="nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li>
+          <a href="hive_mind.html">hivemind</a>
+        </li>
+        <!-- item semiotics -->
+        <li><a href="semiotics.html">semiotics</a></li>
+        <!-- item camping_equipment -->
+        <li><a href="electric.html">electric</a></li>
+        <!-- item image_utils -->
+        <li><a href="image_utils.html">utils</a></li>
+      </ul>
+    </div>
+    <script></script>
+  </body>
 </html>
