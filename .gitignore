@@ -1,7 +1,8 @@
 node_modules
 zig-cache
 zig-out
-
+.DS_Store
+net/.DS_Store
 # Prerequisites
 *.d
 
