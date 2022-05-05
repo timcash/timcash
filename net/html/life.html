@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>hexagon</title>
+    <title>game of life</title>
     <!-- fix viewport for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
@@ -13,8 +13,8 @@
   </head>
   <body>
     <div id="header">
-      <h1>hexagon</h1>
-      <h2>geographic grid system - 0001</h2>
+      <h1>game of life</h1>
+      <h2>John Horton Conway in 1970 - 0001</h2>
     </div>
     <div id="content">
       learn from the bees<br />
@@ -35,63 +35,84 @@
       canvas.height = window.innerHeight;
       var regl = createREGL(canvas);
 
-      // Calling regl() creates a new partially evaluated draw command
-      const drawTriangle = regl({
-        // Shaders in regl are just strings.  You can use glslify or whatever you want
-        // to define them.  No need to manually create shader objects.
+      const RADIUS = 512;
+      const INITIAL_CONDITIONS = Array(RADIUS * RADIUS * 4)
+        .fill(0)
+        .map(() => (Math.random() > 0.9 ? 255 : 0));
+
+      const state = Array(2)
+        .fill()
+        .map(() =>
+          regl.framebuffer({
+            color: regl.texture({
+              radius: RADIUS,
+              data: INITIAL_CONDITIONS,
+              wrap: "repeat",
+            }),
+            depthStencil: false,
+          })
+        );
+
+      const updateLife = regl({
         frag: `
   precision mediump float;
-  uniform vec4 color;
+  uniform sampler2D prevState;
+  uniform int height;
+  varying vec2 uv;
   void main() {
-    gl_FragColor = color;
+    float n = 0.0;
+    for(int dx=-1; dx<=1; ++dx)
+    for(int dy=-1; dy<=1; ++dy) {
+      n += texture2D(prevState, uv+vec2(dx,dy)/float(${RADIUS})).r;
+    }
+    float s = texture2D(prevState, uv).r;
+    if(n > 3.0+s || n < 3.0) {
+      gl_FragColor = vec4(0,0,0,1);
+    } else {
+      gl_FragColor = vec4(1,1,1,1);
+    }
+  }`,
+
+        framebuffer: ({ tick }) => state[(tick + 1) % 2],
+      });
+
+      const setupQuad = regl({
+        frag: `
+  precision mediump float;
+  uniform sampler2D prevState;
+  varying vec2 uv;
+  void main() {
+    float state = texture2D(prevState, uv).r;
+    gl_FragColor = vec4(vec3(state), 1);
   }`,
 
         vert: `
   precision mediump float;
   attribute vec2 position;
+  varying vec2 uv;
   void main() {
+    uv = 0.5 * (position + 1.0);
     gl_Position = vec4(position, 0, 1);
   }`,
 
-        // Here we define the vertex attributes for the above shader
         attributes: {
-          // regl.buffer creates a new array buffer object
-          position: regl.buffer([
-            [-1, -1], // no need to flatten nested arrays, regl automatically
-            [1, -1], // unrolls them into a typedarray (default Float32)
-            [1, 1],
-            [-1, 1],
-            [-1, -1], // no need to flatten nested arrays, regl automatically
-            [1, -1], // unrolls them into a typedarray (default Float32)
-          ]),
-          // regl automatically infers sane defaults for the vertex attribute pointers
+          position: [-4, -4, 4, -4, 0, 4],
         },
 
         uniforms: {
-          // This defines the color of the triangle to be a dynamic variable
-          color: regl.prop("color"),
+          height: canvas.height,
+          prevState: ({ tick }) => state[tick % 2],
         },
 
-        // This tells regl the number of vertices to draw in this command
-        count: 6,
+        depth: { enable: false },
+
+        count: 3,
       });
 
-      // regl.frame() wraps requestAnimationFrame and also handles viewport changes
-      regl.frame(({ time }) => {
-        // clear contents of the drawing buffer
-        regl.clear({
-          color: [0, 0, 0, 0],
-          depth: 1,
-        });
-
-        // draw a triangle using the command defined above
-        drawTriangle({
-          color: [
-            Math.cos(time * 0.1),
-            Math.sin(time * 0.004),
-            Math.cos(time * 0.003),
-            1,
-          ],
+      regl.frame(() => {
+        setupQuad(() => {
+          regl.draw();
+          updateLife();
         });
       });
 

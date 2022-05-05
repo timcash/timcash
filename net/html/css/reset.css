@@ -70,7 +70,7 @@ body {
 }
 
 #header {
-    padding: 30px;
+    padding: 20px;
 }
 
 #content {
@@ -92,11 +92,11 @@ body {
 
 h1 {
     font-size: 2em;
+    padding-bottom: 15px;
 }
 
 h2 {
     font-size: 1.5em;
-    color: grey;
 }
 
 a {
@@ -116,18 +116,8 @@ button:hover {
     background-color: skyblue;
 }
 
-.circle_button {
-    padding: 15px;
-    width: 100px;
-    height: 100px;
-    border: 2px solid white;
-    color: white;
-    /* circle the corners */
-    border-radius: 50%;
-}
-
 .square_button {
-    padding: 15px;
+            padding: 15px;
     width: 100px;
     height: 50px;
     border: 2px solid white;
@@ -141,7 +131,6 @@ button:hover {
     /* min-width: 100px; */
     /* min-height: 100px; */
 }
-
 
 #canvas1 {
     position: absolute;
