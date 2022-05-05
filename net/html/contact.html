@@ -7,33 +7,79 @@
     <!-- fix viewport for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="icon" type="image/png" href="img/favicon.ico" />
     <style></style>
   </head>
   <body>
     <div id="header">
       <h1>Chromatic.Systems</h1>
+      <h2>Adaptive Symbols - 0001</h2>
     </div>
-    <div id="subheader">
-      <h2>Adaptive Symbolic Kommunication - 0001</h2>
-    </div>
-    <div id="stage">
+    <div id="content">
       <p id="turn">The tree mixes soil and sky</p>
       <p id="partition">Seeds explode with life</p>
-      <canvas id="stage1"></canvas>
+      block in stored conciousness <br />
+      "four immeasurable states" <br />
+      mudita sympathetic joy<br />
+      mitree(sp?) <br />
+      vipasana looking deeply <br />
+      avaloketeshvara listening to the suffering of the world<br />
+      (quanteum chinese) <br />
+      tranforming the sanga family<br />
+      understanding is the root, love has no meaning without understanding<br />
+      <canvas id="canvas1"></canvas>
+      <audio controls preload="auto">
+        <source src="mp3/sample.mp3" type="audio/mpeg" />
+      </audio>
     </div>
-    <div id="nav">
-      <ul>
+    <div id="ui">
+      <ul id="links">
         <li><a href="index.html">home</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="contact.html">contact</a></li>
       </ul>
+      <button id="button1" class="circle_button">Play →</button>
     </div>
     <script>
       // create a canvas element
-      const canvas = document.getElementById("stage1");
+      const canvas = document.getElementById("canvas1");
       const ctx = canvas.getContext("2d");
+      const audio_mp3 = document.createElement("audio");
+      let audioCtx;
+      const button = document.querySelector("#button1");
+
+      // load music
+      let music_loaded = false;
+      let playing = false;
+      function loadMusic() {
+        if (audio_mp3.canPlayType("audio/mpeg")) {
+          music_loaded = true;
+          audio_mp3.setAttribute("src", "mp3/sample.mp3");
+        }
+        if (music_loaded) {
+          audio_mp3.currentTime = 5;
+          audio_mp3.play();
+        }
+        if (audio_mp3.ended) {
+          audio_mp3.currentTime = 0;
+          audio_mp3.play();
+        }
+      }
+
+      button.addEventListener(
+        "click",
+        function () {
+          audioCtx = new AudioContext();
+          loadMusic();
+          console.log("clicked");
+          // check if context is in suspended state (autoplay policy)
+          if (audioCtx.state === "suspendePd") {
+            audioCtx.resume();
+          }
+        },
+        false
+      );
+
       // set canvas width and height
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -82,7 +128,7 @@
         const start_xy = getXYbyIndex(start_idx, partitions);
         const end_xy = getXYbyIndex(end_idx, partitions);
         const progress = start_index / partitions;
-        const color = hsl(progress, 1);
+        const color = hsl(progress, opacity);
         return line(start_xy, end_xy, color);
       }
 
@@ -117,13 +163,53 @@
       // get the multiplier element
       const multiplier = document.getElementById("turn");
 
+      // given number:x in xmin-xmax scale to x-ymin-ymax scale
+      function scale(x, xmin, xmax, ymin, ymax) {
+        return ((x - xmin) / (xmax - xmin)) * (ymax - ymin) + ymin;
+      }
+      // given t return a point on a bezier curve
+      function bezier(t, p0, p1, p2, p3) {
+        const x =
+          (1 - t) ** 3 * p0.x +
+          3 * (1 - t) ** 2 * t * p1.x +
+          3 * (1 - t) * t ** 2 * p2.x +
+          t ** 3 * p3.x;
+        const y =
+          (1 - t) ** 3 * p0.y +
+          3 * (1 - t) ** 2 * t * p1.y +
+          3 * (1 - t) * t ** 2 * p2.y +
+          t ** 3 * p3.y;
+
+        return {
+          x,
+          y,
+        };
+      }
+
+      // drawGradient()
+      function drawGradient() {
+        // create diagonal gradient from black to dark grey
+        const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
+        gradient.addColorStop(0, "#222");
+        gradient.addColorStop(0.1, "#000");
+        gradient.addColorStop(1, "#000");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
       function drawLines(elapsed) {
-        const turns_per_second = 0.1;
+        const turns_per_second = 0.25;
         const seconds_elapsed = elapsed / 1000;
         const current_turn = turns_per_second * seconds_elapsed;
         const tail_turn = current_turn - 0.5;
-        const partitions = 360;
+        const partitions = 144;
         const turns_per_partition = 1 / partitions;
+
+        const p0 = { x: -200, y: 0 };
+        const p1 = { x: -100, y: 200 };
+        const p2 = { x: 100, y: 200 };
+        const p3 = { x: 200, y: 0 };
+        //drawGradient();
 
         for (let i = tail_turn; i <= current_turn; i += turns_per_partition) {
           if (i < 0) {
@@ -131,7 +217,21 @@
           }
           const idx = Math.floor(i * partitions);
           const mult = Math.floor(i);
-          const line = generateLine(idx, mult, partitions);
+          const t = scale(i, tail_turn, current_turn, 0, 1);
+          const p = bezier(t, p1, p0, p3, p2);
+          // draw p as a red point
+          function plot_curve() {
+            ctx.beginPath();
+            ctx.arc(p.x + center.x, p.y + center.y, 5, 0, 2 * Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.closePath();
+          }
+          //plot_curve();
+
+          const y = p.y;
+          const o = scale(y, 0, 200, 0, 1);
+          const line = generateLine(idx, mult, partitions, o);
           drawLine(line);
         }
       }

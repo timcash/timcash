@@ -16,29 +16,17 @@
       <h2>Adaptive Symbols - 0001</h2>
     </div>
     <div id="content">
-      <p id="turn">The tree mixes soil and sky</p>
-      <p id="partition">Seeds explode with life</p>
-      block in stored conciousness <br />
-      "four immeasurable states" <br />
-      mudita sympathetic joy<br />
-      mitree(sp?) <br />
-      vipasana looking deeply <br />
-      avaloketeshvara listening to the suffering of the world<br />
-      (quanteum chinese) <br />
-      tranforming the sanga family<br />
-      understanding is the root, love has no meaning without understanding<br />
+      start with an open mind<br />
+      shoshin<br />
       <canvas id="canvas1"></canvas>
-      <audio controls preload="auto">
-        <source src="mp3/sample.mp3" type="audio/mpeg" />
-      </audio>
     </div>
     <div id="ui">
       <ul id="links">
-        <li><a href="index.html">home</a></li>
+        <li><a href="#">home</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="contact.html">contact</a></li>
       </ul>
-      <button id="button1" class="circle_button">Play →</button>
+      <button id="button1" class="square_button">Play →</button>
     </div>
     <script>
       // create a canvas element
@@ -57,7 +45,7 @@
           audio_mp3.setAttribute("src", "mp3/sample.mp3");
         }
         if (music_loaded) {
-          audio_mp3.currentTime = 5;
+          audio_mp3.currentTime = 0;
           audio_mp3.play();
         }
         if (audio_mp3.ended) {
@@ -69,13 +57,13 @@
       button.addEventListener(
         "click",
         function () {
-          audioCtx = new AudioContext();
+          //audioCtx = new AudioContext();
           loadMusic();
-          console.log("clicked");
-          // check if context is in suspended state (autoplay policy)
-          if (audioCtx.state === "suspendePd") {
-            audioCtx.resume();
-          }
+          // console.log("clicked");
+          // // check if context is in suspended state (autoplay policy)
+          // if (audioCtx.state === "suspended") {
+          //   audioCtx.resume();
+          // }
         },
         false
       );
@@ -242,10 +230,31 @@
         y: canvas.height / 2,
       };
 
+      // create a list of random bird names
+      const bird_names = ["robin", "sparrow", "bluejay", "cardinal", "duck"];
+
+      // create a list of 1000 random bird names
+      const bird_names_1000 = [];
+      for (let i = 0; i < 1000; i++) {
+        bird_names_1000.push(
+          bird_names[Math.floor(Math.random() * bird_names.length)]
+        );
+      }
+
+      // a funtion to render bird names text to canvas
+      function renderBirdNames() {
+        // render the bird text
+        ctx.font = "30px verdana";
+        ctx.fillStyle = "white";
+        // for each bird name
+        bird_names_1000.forEach((bird_name, i) => {
+          // render the bird name
+          ctx.fillText(bird_name, i * 50, i * 50);
+        });
+      }
+
       let prev_frame_number = -1;
       let start, previousTimeStamp;
-      let done = false;
-
       const frames_per_second = 60;
       const ms_per_second = 1000;
       // start a request animation frame loop
@@ -257,7 +266,7 @@
         const frame_number = Math.floor(elapsed / 60);
         if (frame_number > prev_frame_number) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+          //renderBirdNames();
           drawLines(elapsed);
           prev_frame_number = frame_number;
         }

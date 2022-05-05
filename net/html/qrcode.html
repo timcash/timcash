@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>bodhisattva</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <style></style>
+  </head>
+  <body>
+    <h1>bodhisattva</h1>
+    <h2>enlightenment</h2>
+    <div id="stage">
+      block in stored conciousness <br />
+      "four immeasurable states" <br />
+      mudita sympathetic joy<br />
+      mitree(sp?) <br />
+      vipasana looking deeply <br />
+      avaloketeshvara (quanteum chinese) listening to the suffering of the
+      world<br />
+      tranforming the sanga family<br />
+      understanding is the root, love has no meaning without understanding<br />
+    </div>
+
+    <canvas id="qrcode"></canvas>
+    <script type="module">
+      import qrcode from "https://cdn.skypack.dev/qrcode";
+      var canvas = document.getElementById("qrcode");
+
+      qrcode.toCanvas(canvas, "sample text", function (error) {
+        if (error) console.error(error);
+        console.log("success!");
+      });
+    </script>
+  </body>
+</html>

@@ -9,35 +9,175 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="icon" type="image/png" href="img/favicon.ico" />
-    <style></style>
+    <style>
+      body {
+        overflow: hidden;
+      }
+      #stage {
+        flex: 1;
+        /* perspective */
+        transform-style: preserve-3d;
+        perspective: 500px;
+      }
+      #map1 {
+        /* transition over 0.5 seconds */
+        transition: 0.5s;
+      }
+      #header {
+        flex: 0;
+      }
+      #subheader {
+        flex: 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        /* background transitions over 2 seconds */
+        transition: background-color 2s;
+        /* san serif font */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* 1px soild white border */
+        border: 1px solid #aaa;
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
     <div id="header">
       <h1>XY Plane</h1>
+      <div id="subheader">
+        <h2>Movement - 0001</h2>
+      </div>
     </div>
-    <div id="subheader">
-      <h2>Movement - 0001</h2>
-    </div>
+
     <div id="stage">
-      <p id="turn">north east south west</p>
-      <p id="partition">Explore the Map</p>
-      <button id="play_button">Play</button>
-      <canvas id="stage1"></canvas>
-      <audio controls preload="auto">
-        <source src="mp3/sample.mp3" type="audio/mpeg" />
-      </audio>
-    </div>
-    <div id="nav">
-      <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
+      <div id="map1" class="map"></div>
     </div>
     <script>
-      // create a canvas element
-      const canvas = document.getElementById("stage1");
-      const ctx = canvas.getContext("2d");
+      // store the stage element
+      var map = document.getElementById("map1");
+      // given a url and element append an iframe to the element
+      function appendIframe(url, element) {
+        let iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.classList.add("frame");
+        element.appendChild(iframe);
+      }
+
+      // create a 100 card div at [x,y] with width and height 100px at random location
+      function makeCard(params) {
+        let div = document.createElement("div");
+        // set id to params.id
+        div.id = params.id;
+        // add class box
+        div.classList.add("box");
+        div.style.top = params.x + "px";
+        div.style.left = params.y + "px";
+
+        // append a iframe to the div with src=https://${params.x}.${params.y}.html
+        //appendIframe("https://" + params.x + "." + params.y + ".html", div);
+        map.appendChild(div);
+      }
+
+      // create 100 cards in a grid with 100 px spacing
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          makeCard({ id: i, x: i * (100 + 100), y: j * (100 + 100) });
+        }
+      }
+
+      function get_element_matrix(e) {
+        const t = e.style.transform;
+        console.log(t);
+        let t_data = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+        // if t is already an array, set t_data to t
+        if (Array.isArray(t)) {
+          t_data = t;
+        }
+        // if t match the pattern: matrix3d convert to array
+        const m = t.match(/matrix3d\(([^)]+)\)/);
+        if (m) {
+          t_data = m[1].split(",").map(Number);
+        }
+        return t_data;
+      }
+      function translate_matrix_css(m) {
+        return "perspective(500px) matrix3d(" + m.join(",") + ")";
+      }
+
+      function translate_matrix_js({ x, y, z, s }) {
+        if (!s) s = 1;
+        // prettier-ignore
+        let t_m = [
+          1,    0,    0,   0,
+          0,    1,    0,   0,
+          0,    0,    1,   0,
+          x,    y,    z,   1,
+        ];
+        return t_m;
+      }
+
+      function multiply_matrix_4x4(a, b) {
+        // prettier-ignore
+        let m = [
+          0, 0, 0, 0,
+          0, 0, 0, 0,
+          0, 0, 0, 0,
+          0, 0, 0, 0
+        ];
+        for (let i = 0; i < 4; i++) {
+          for (let j = 0; j < 4; j++) {
+            for (let k = 0; k < 4; k++) {
+              m[i * 4 + j] += a[i * 4 + k] * b[k * 4 + j];
+            }
+          }
+        }
+        return m;
+      }
+
+      function translate(e, { x, y, z, s }) {
+        const m1 = get_element_matrix(e);
+
+        const m2 = translate_matrix_js({ x, y, z, s });
+
+        const m3 = multiply_matrix_4x4(m1, m2);
+
+        const mcss = "matrix3d(" + m3.join(",") + ")";
+
+        e.style.transform = mcss;
+      }
+      // ==================================================
+      //                     KEYBOARD
+      // ==================================================
+
+      document.addEventListener("keydown", function (event) {
+        const jump = 150;
+        const jumpz = 450;
+        // if "w" is pressed increase y by 10 to go north
+        if (event.key === "w") {
+          translate(map, { x: 0, y: jump, z: 0 });
+        }
+        // if "s" is pressed decrease y by jump to go south
+        if (event.key === "s") {
+          translate(map, { x: 0, y: -jump, z: 0 });
+        }
+        // if "a" is pressed decrease x by jump to go west
+        if (event.key === "a") {
+          translate(map, { x: jump, y: 0, z: 0 });
+        }
+        // if "d" is pressed increase x by jump to go east
+        if (event.key === "d") {
+          translate(map, { x: -jump, y: 0, z: 0 });
+        }
+        // if arrow up zoom in
+        if (event.key === "ArrowUp") {
+          translate(map, { x: 0, y: 0, z: jumpz });
+        }
+        // if arrow down zoom out
+        if (event.key === "ArrowDown") {
+          translate(map, { x: 0, y: 0, z: -jumpz });
+        }
+      });
     </script>
   </body>
 </html>

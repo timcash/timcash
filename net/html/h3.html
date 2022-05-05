@@ -1,0 +1,192 @@
+<!-- a web page with a black background -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>hexagon</title>
+    <!-- fix viewport for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+    <script src="https://unpkg.com/h3-js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <h1>hexagon</h1>
+      <h2>geographic grid system - 0001</h2>
+    </div>
+    <div id="content">
+      learn from the bees<br />
+      <canvas id="canvas1"></canvas>
+    </div>
+    <div id="ui">
+      <ul id="links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <button id="button1" class="square_button">Play →</button>
+    </div>
+    <script>
+      // create a canvas element
+      const canvas = document.getElementById("canvas1");
+      const ctx = canvas.getContext("2d");
+      const audio_mp3 = document.createElement("audio");
+      const button = document.querySelector("#button1");
+
+      // load music
+      let music_loaded = false;
+      let playing = false;
+      function loadMusic() {
+        if (audio_mp3.canPlayType("audio/mpeg")) {
+          music_loaded = true;
+          audio_mp3.setAttribute("src", "mp3/sample.mp3");
+        }
+        if (music_loaded) {
+          audio_mp3.currentTime = 0;
+          audio_mp3.play();
+        }
+        if (audio_mp3.ended) {
+          audio_mp3.currentTime = 0;
+          audio_mp3.play();
+        }
+      }
+
+      button.addEventListener(
+        "click",
+        function () {
+          loadMusic();
+        },
+        false
+      );
+
+      // set canvas width and height
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // convert cartesian to polar coordinates
+      function cartesianToPolar(x, y) {
+        return {
+          r: Math.sqrt(x * x + y * y),
+          theta: Math.atan2(y, x),
+        };
+      }
+
+      // given int:0-360 return radians:0-2pi
+      function radians(degrees) {
+        return (degrees * Math.PI) / 180;
+      }
+
+      function line(start, end, color) {
+        return {
+          start,
+          end,
+          color,
+        };
+      }
+
+      // given float:0-1 return hsl:0-360
+      function hsl(h_01, opacity) {
+        return `hsla(${h_01 * 360}, 100%, 50%, ${opacity})`;
+      }
+
+      // {start, end, color} => dra {
+      function drawLine(line) {
+        // add center to line.start and line.end
+        const start = {
+          x: line.start.x + center.x,
+          y: line.start.y + center.y,
+        };
+        const end = {
+          x: line.end.x + center.x,
+          y: line.end.y + center.y,
+        };
+
+        ctx.beginPath();
+        ctx.moveTo(start.x, start.y);
+        ctx.lineTo(end.x, end.y);
+        ctx.strokeStyle = line.color;
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      // given number:x in xmin-xmax scale to x-ymin-ymax scale
+      function scale(x, xmin, xmax, ymin, ymax) {
+        return ((x - xmin) / (xmax - xmin)) * (ymax - ymin) + ymin;
+      }
+
+      // Get the set of hexagons within a polygon
+      const polygon = [
+        [1.0, 1.0],
+        [1.0, 90.0],
+        [180, 90.0],
+        [180.0, 1.0],
+      ];
+      const hexagons = h3.polyfill(polygon, 1);
+      // Get the outline of a set of hexagons, as a GeoJSON-style MultiPolygon
+      const coordinates = h3.h3SetToMultiPolygon(hexagons, true);
+
+      function drawLines(elapsed) {
+        // for each coordinate in the MultiPolygon
+        const minmaxbox = 300;
+        for (const c1 of coordinates) {
+          for (const c2 of c1) {
+            // log
+            ctx.beginPath();
+            ctx.strokeStyle = hsl(0.5, 1.0);
+            const mx =
+              scale(c2[0][0], -180, 180, -minmaxbox, minmaxbox) + center.x;
+            const my =
+              scale(c2[0][1], -90, 90, -minmaxbox, minmaxbox) + center.y;
+
+            ctx.moveTo(mx, my);
+
+            let count = 0;
+            for (const c3 of c2) {
+              if (count === 0) {
+                count++;
+                continue;
+              }
+              count++;
+              const mx =
+                scale(c3[0], -180, 180, -minmaxbox, minmaxbox) + center.x;
+              const my =
+                scale(c3[1], -90, 90, -minmaxbox, minmaxbox) + center.y;
+              // log mx, my
+              ctx.lineTo(mx, my);
+            }
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+
+      // world center coordinates at half the canvas width and height
+      const center = {
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+      };
+
+      let prev_frame_number = -1;
+      let start, previousTimeStamp;
+      const frames_per_second = 60;
+      const ms_per_second = 1000;
+      // start a request animation frame loop
+      async function step(timestamp) {
+        if (start === undefined) {
+          start = timestamp;
+        }
+        const elapsed = timestamp - start; // in milliseconds
+        const frame_number = Math.floor(elapsed / 60);
+        if (frame_number > prev_frame_number) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          drawLines(elapsed);
+          prev_frame_number = frame_number;
+        }
+        window.requestAnimationFrame(step);
+      }
+
+      window.requestAnimationFrame(step);
+    </script>
+  </body>
+</html>

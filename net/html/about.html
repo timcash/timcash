@@ -7,36 +7,77 @@
     <!-- fix viewport for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="icon" type="image/png" href="img/favicon.ico" />
     <style></style>
   </head>
   <body>
     <div id="header">
-      <h1>Chromatic.Systems</h1>
+      <h1>Curve Plot</h1>
+      <h2>Bézier curve control points - 0002</h2>
     </div>
-    <div id="subheader">
-      <h2>Adaptive Symbolic Kommunication - 0001</h2>
+    <div id="content">
+      <canvas id="canvas1"></canvas>
+      <audio controls preload="auto">
+        <source src="mp3/sample.mp3" type="audio/mpeg" />
+      </audio>
     </div>
-    <div id="stage">
-      <p id="turn">The tree mixes soil and sky</p>
-      <p id="partition">Seeds explode with life</p>
-      <canvas id="stage1"></canvas>
-    </div>
-    <div id="nav">
-      <ul>
+    <div id="ui">
+      <ul id="links">
         <li><a href="index.html">home</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="contact.html">contact</a></li>
       </ul>
+      <button id="button1" class="circle_button">Play →</button>
     </div>
     <script>
       // create a canvas element
-      const canvas = document.getElementById("stage1");
+      const canvas = document.getElementById("canvas1");
       const ctx = canvas.getContext("2d");
+      const audio_mp3 = document.createElement("audio");
+      let audioCtx;
+      const button = document.querySelector("#button1");
+
+      // load music
+      let music_loaded = false;
+      let playing = false;
+      function loadMusic() {
+        if (audio_mp3.canPlayType("audio/mpeg")) {
+          music_loaded = true;
+          audio_mp3.setAttribute("src", "mp3/sample.mp3");
+        }
+        if (music_loaded) {
+          audio_mp3.currentTime = 5;
+          audio_mp3.play();
+        }
+        if (audio_mp3.ended) {
+          audio_mp3.currentTime = 0;
+          audio_mp3.play();
+        }
+      }
+
+      button.addEventListener(
+        "click",
+        function () {
+          audioCtx = new AudioContext();
+          loadMusic();
+          console.log("clicked");
+          // check if context is in suspended state (autoplay policy)
+          if (audioCtx.state === "suspendePd") {
+            audioCtx.resume();
+          }
+        },
+        false
+      );
+
       // set canvas width and height
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      const MAX_X = canvas.width / 2 - 100;
+      const MAX_Y = canvas.height / 2 - 100;
+      const MIN_X = -canvas.width / 2 + 100;
+      const MIN_Y = -canvas.height / 2 + 100;
+
       // convert polar to cartesian coordinates
       function polarToCartesian(r, theta) {
         return {
@@ -53,45 +94,9 @@
         };
       }
 
-      // given a float:0-1 return int:0-360
-      function scale360(f) {
-        return f * 360;
-      }
-
-      // given int:0-360 return radians:0-2pi
-      function radians(degrees) {
-        return (degrees * Math.PI) / 180;
-      }
-
-      function line(start, end, color) {
-        return {
-          start,
-          end,
-          color,
-        };
-      }
-
       // given float:0-1 return hsl:0-360
-      function hsl(h_01, opacity) {
-        return `hsla(${h_01 * 360}, 100%, 50%, ${opacity})`;
-      }
-
-      function generateLine(start_index, multiple, partitions, opacity) {
-        const start_idx = start_index % partitions;
-        const end_idx = (start_index * multiple) % partitions;
-        const start_xy = getXYbyIndex(start_idx, partitions);
-        const end_xy = getXYbyIndex(end_idx, partitions);
-        const progress = start_index / partitions;
-        const color = hsl(progress, 1);
-        return line(start_xy, end_xy, color);
-      }
-
-      function getXYbyIndex(index, partitions) {
-        const radius = 200;
-        const radians_per_partition = (2 * Math.PI) / partitions;
-        const radians = radians_per_partition * index;
-        const xy = polarToCartesian(radius, radians);
-        return xy;
+      function hsl(hue_01, opacity) {
+        return `hsla(${hue_01 * 360}, 100%, 50%, ${opacity})`;
       }
 
       // {start, end, color} => dra {
@@ -114,26 +119,27 @@
         ctx.closePath();
       }
 
-      // get the multiplier element
-      const multiplier = document.getElementById("turn");
+      // given number:x in xmin-xmax scale to x-ymin-ymax scale
+      function scale(x, xmin, xmax, ymin, ymax) {
+        return ((x - xmin) / (xmax - xmin)) * (ymax - ymin) + ymin;
+      }
 
-      function drawLines(elapsed) {
-        const turns_per_second = 0.1;
-        const seconds_elapsed = elapsed / 1000;
-        const current_turn = turns_per_second * seconds_elapsed;
-        const tail_turn = current_turn - 0.5;
-        const partitions = 360;
-        const turns_per_partition = 1 / partitions;
-
-        for (let i = tail_turn; i <= current_turn; i += turns_per_partition) {
-          if (i < 0) {
-            continue;
-          }
-          const idx = Math.floor(i * partitions);
-          const mult = Math.floor(i);
-          const line = generateLine(idx, mult, partitions);
-          drawLine(line);
-        }
+      // given t return a point on a bezier curve
+      function bezier(t, p0, p1, p2, p3) {
+        const x =
+          (1 - t) ** 3 * p0.x +
+          3 * (1 - t) ** 2 * t * p1.x +
+          3 * (1 - t) * t ** 2 * p2.x +
+          t ** 3 * p3.x;
+        const y =
+          (1 - t) ** 3 * p0.y +
+          3 * (1 - t) ** 2 * t * p1.y +
+          3 * (1 - t) * t ** 2 * p2.y +
+          t ** 3 * p3.y;
+        return {
+          x,
+          y,
+        };
       }
 
       // world center coordinates at half the canvas width and height
@@ -142,12 +148,89 @@
         y: canvas.height / 2,
       };
 
+      function drawControlPoint({ x, y, color }) {
+        ctx.beginPath();
+        ctx.arc(x + center.x, y + center.y, 1, 0, 2 * Math.PI);
+        ctx.strokeStyle = color;
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      // given a list of points use gravity to move them around
+      function forces(x, y, points) {
+        // apply vx and vy to each point
+        for (let i = 0; i < points.length; i++) {
+          const point = points[i];
+          const vx = point.vx;
+          const vy = point.vy;
+          point.x += vx;
+          point.y += vy;
+          if (point.x < MIN_X) {
+            point.x = MIN_X;
+            point.vx = -vx;
+          }
+          if (point.x > MAX_X) {
+            point.x = MAX_X;
+            point.vx = -vx;
+          }
+          if (point.y < MIN_Y) {
+            point.y = MIN_Y;
+            point.vy = -vy;
+          }
+          if (point.y > MAX_Y) {
+            point.y = MAX_Y;
+            point.vy = -vy;
+          }
+        }
+
+        return points;
+      }
+
+      // create a random point in the canvas
+      function randomPoint() {
+        const x = Math.random() * canvas.width - center.x;
+        const y = Math.random() * canvas.height - center.y;
+        return {
+          x: x * 0.9,
+          y: y * 0.9,
+          vx: Math.random() - 0.5,
+          vy: Math.random() - 0.5,
+          color: "white",
+        };
+      }
+
+      // create the 4 points of a square lentgh 2
+      let points = [randomPoint(), randomPoint(), randomPoint(), randomPoint()];
+
+      function drawDots(elapsed) {
+        points = forces(0, 0, points);
+        // draw the 4 control points
+        points.forEach((point) => {
+          //drawControlPoint(point);
+        });
+        const t = (elapsed % 1000) / 1000;
+        const p = bezier(t, ...points);
+        const x = p.x + center.x;
+        const y = p.y + center.y;
+        const o = scale(y, 0, 200, 0, 1);
+
+        // get a random number between 10 and 15
+        const r = Math.random() * (15 - 10) + 10;
+        // draw a 5px dot at p
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = hsl(t, o);
+        ctx.fill();
+        ctx.closePath();
+      }
+
       let prev_frame_number = -1;
       let start, previousTimeStamp;
       let done = false;
 
       const frames_per_second = 60;
       const ms_per_second = 1000;
+
       // start a request animation frame loop
       async function step(timestamp) {
         if (start === undefined) {
@@ -155,12 +238,11 @@
         }
         const elapsed = timestamp - start; // in milliseconds
         const frame_number = Math.floor(elapsed / 60);
-        if (frame_number > prev_frame_number) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-          drawLines(elapsed);
-          prev_frame_number = frame_number;
-        }
+        // if (frame_number > prev_frame_number) {
+        //   // draw dots
+        //   prev_frame_number = frame_number;
+        // }
+        drawDots(elapsed);
         window.requestAnimationFrame(step);
       }
 

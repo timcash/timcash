@@ -17,6 +17,7 @@
       /* background black */
       background: white;
       transform-style: preserve-3d;
+      perspective: 500px;
     }
     .box {
       border: 4px solid rgb(20, 20, 120);
@@ -51,6 +52,7 @@
       border: 0;
     }
     .map1 {
+      perspective: 500px;
       transition: 0.2s;
       transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 
@@ -106,22 +108,6 @@
         return m;
       }
 
-      function get_element_matrix(e) {
-        const t = e.style.transform;
-        console.log(t);
-        let t_data = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
-        // if t is already an array, set t_data to t
-        if (Array.isArray(t)) {
-          t_data = t;
-        }
-        // if t match the pattern: matrix3d convert to array
-        const m = t.match(/matrix3d\(([^)]+)\)/);
-        if (m) {
-          t_data = m[1].split(",").map(Number);
-        }
-        return t_data;
-      }
-
       function translate(e, { x, y, z, s }) {
         const m1 = get_element_matrix(e);
 
@@ -162,50 +148,6 @@
           }
         }
       }
-
-      // ==================================================
-      //                     KEYBOARD
-      // ==================================================
-
-      document.addEventListener("keydown", function (event) {
-        const jump = 150;
-        // if "w" is pressed increase y by 10 to go north
-        if (event.key === "w") {
-          // get the map element
-          let map = document.querySelector(".map1");
-          translate(map, { x: 0, y: jump, z: 0 });
-        }
-        // if "s" is pressed decrease y by jump to go south
-        if (event.key === "s") {
-          // get the map element
-          let map = document.querySelector(".map1");
-          translate(map, { x: 0, y: -jump, z: 0 });
-        }
-        // if "a" is pressed decrease x by jump to go west
-        if (event.key === "a") {
-          // get the map element
-          let map = document.querySelector(".map1");
-          translate(map, { x: jump, y: 0, z: 0 });
-        }
-        // if "d" is pressed increase x by jump to go east
-        if (event.key === "d") {
-          // get the map element
-          let map = document.querySelector(".map1");
-          translate(map, { x: -jump, y: 0, z: 0 });
-        }
-        // if arrow up zoom in
-        if (event.key === "ArrowUp") {
-          // get the map element
-          let map = document.querySelector(".map1");
-          translate(map, { x: 0, y: 0, z: jump });
-        }
-        // if arrow down zoom out
-        if (event.key === "ArrowDown") {
-          // get the map element
-          let map = document.querySelector(".map1");
-          translate(map, { x: 0, y: 0, z: -jump });
-        }
-      });
 
       // ==================================================
       //                     OBSERVER
