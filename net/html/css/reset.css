@@ -4,150 +4,158 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
- *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
 }
 
 /* Preferred box-sizing value */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-    list-style: none;
+ol,
+ul,
+menu {
+  list-style: none;
 }
 
 /* For images to not be able to exceed their container */
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* removes spacing between cells in tables */
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */
 textarea {
-    white-space: revert;
+  white-space: revert;
 }
 
 /* fix the feature of 'hidden' attribute.
    display:revert; revert to element instead of attribute */
-:where([hidden]){
-    display:none;
+:where([hidden]) {
+  display: none;
 }
 
 /* revert for bug in Chromium browsers
    - fix for the content editable attribute will work properly. */
-:where([contenteditable]){
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 :where([draggable="true"]) {
-    -webkit-user-drag: element;
+  -webkit-user-drag: element;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-    overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  overflow: hidden;
 }
 
 #header {
-    padding: 20px;
+  padding: 20px;
 }
 
 #content {
-    flex: 1;
-    padding: 30px;
-    color: grey;
+  flex: 1;
+  padding: 30px;
+  color: grey;
 }
 
 #ui {
-    padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #links li {
-    padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 h1 {
-    font-size: 2em;
-    padding-bottom: 15px;
+  font-size: 2em;
+  padding-bottom: 15px;
 }
 
 h2 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 a {
-    color: skyblue;
-    /* pointer */
-    cursor: pointer;
+  color: skyblue;
+  /* pointer */
+  cursor: pointer;
 }
 
 button {
-    /* pointer */
-    cursor: pointer;
-    transition: 1s;
+  /* pointer */
+  cursor: pointer;
+  transition: 1s;
 }
 
 /* on button hover change background to skyblue */
 button:hover {
-    background-color: skyblue;
+  background-color: skyblue;
 }
 
 .square_button {
-            padding: 15px;
-    width: 100px;
-    height: 50px;
-    border: 2px solid white;
-    color: white;
+  padding: 15px;
+  width: 100px;
+  height: 50px;
+  border: 2px solid white;
+  color: white;
+}
+
+#button1 {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 #qrcode {
-    /* 2px white border */
-    width: 100px;
-    height: 100px;
-    /* min-width: 100px; */
-    /* min-height: 100px; */
+  /* 2px white border */
+  width: 100px;
+  height: 100px;
+  /* min-width: 100px; */
+  /* min-height: 100px; */
 }
 
 #canvas1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 #about {
-    position: absolute;
-    top: 0;
-    left: 1000px;
-    background-color: rebeccapurple;
+  position: absolute;
+  top: 0;
+  left: 1000px;
+  background-color: rebeccapurple;
 }
 #contact {
-    position: absolute;
-    top: 1000px;
-    left: 1000px;
-    background-color: rgb(28, 201, 146);
+  position: absolute;
+  top: 1000px;
+  left: 1000px;
+  background-color: rgb(28, 201, 146);
 }

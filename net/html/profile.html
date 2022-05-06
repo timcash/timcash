@@ -1,0 +1,65 @@
+<!-- a web page with a black background -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Chromatic</title>
+  <!-- fix viewport for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="icon" type="image/png" href="img/favicon.ico" />
+  <style></style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Chromatic.Systems</h1>
+    <h2>Adaptive Symbols - 0001</h2>
+  </div>
+  <div id="content">
+    start with an open mind<br />
+    shoshin<br />
+    <canvas id="canvas1"></canvas>
+  </div>
+  <div id="ui">
+    <ul id="links">
+      <li><a href="#">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+    <button id="button1" class="square_button">Play →</button>
+  </div>
+  <script>
+    // create a canvas element
+    const canvas = document.getElementById("canvas1");
+    const ctx = canvas.getContext("2d");
+    // set canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    // load the face image
+    const face = new Image();
+    face.src = "img/face.png";
+    // draw the iamge with canvas
+    face.onload = function () {
+      // get the aspect ratio of the image
+      const ratio = face.width / face.height;
+      // a/b = c/d --> c = a/b * d
+      // fit the image to the canvas maintaining the aspect ratio
+      // desaturate the image
+
+      // create a circle mask for the image
+      ctx.beginPath();
+      ctx.arc(canvas.width / 4, canvas.height / 4, 200, 0, 2 * Math.PI);
+      ctx.clip();
+      // draw the image
+      ctx.drawImage(face, 0, 0, canvas.width / 2, canvas.height / 2);
+      // move the canvas to the center of the screen
+      canvas.style.top = "10%";
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,16 +1,55 @@
+<!-- ====================================================================== -->
+<!--                            GEOMETRIC ALGEBRA                           -->
+<!-- ====================================================================== -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Template</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-    <style></style>
-  </head>
-  <body>
-    <main></main>
-    <script src="js/main.js"></script>
-  </body>
+<!-- ====================================================================== -->
+<!--                                HEADERS                                 -->
+<!-- ====================================================================== -->
+
+<head>
+  <meta charset="utf-8" />
+  <title>Geometric Algebra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="icon" type="image/png" href="img/favicon.ico" />
+  <style></style>
+</head>
+<!-- ====================================================================== -->
+<!--                                 BODY                                   -->
+<!-- ====================================================================== -->
+
+<body>
+  <div id="header">
+    <h1>Geometric Algebra</h1>
+    <h2>Adaptive Symbols - 0344</h2>
+  </div>
+  <!-- ====================================================================== -->
+  <!--                                CONTENT                                 -->
+  <!-- ====================================================================== -->
+  <div id="content">
+    start with an open mind<br />
+    shoshin<br />
+    <canvas id="canvas1"></canvas>
+  </div>
+  <div id="ui">
+    <ul id="links">
+      <li><a href="#">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+    <button id="button1" class="square_button">Play →</button>
+  </div>
+  <!-- ====================================================================== -->
+  <!--                                CODE                                    -->
+  <!-- ====================================================================== -->
+  <script>
+    // create a canvas element
+    const canvas = document.getElementById("canvas1");
+    const ctx = canvas.getContext("2d");
+    const audio = document.createElement("audio");
+    const button = document.querySelector("#button1");
+  </script>
+</body>
+
 </html>
