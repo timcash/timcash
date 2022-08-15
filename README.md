@@ -1,12 +1,9 @@
 # Available for Contract Full Time and Training
-20 years of experience building software. Training over 100 developers and engineers. 1000+ public speaking events. Developing systems as an Engineer, Mathematician, and Architect with leading technology companies and laboratories. Now focused on inspiring other life long learners to take on challenging subjects in energy, food networks, and pollution by leveraging the frontier of technology.
-
-Projects run the range: SaaS on AWS and GCP, reverse engineering, streaming video, counter-intelligence, network analysis, geospatial tools, and data pipelines.
+20 years of experience building software. Training over 100 developers and engineers. 1000+ public speaking events. Developing systems as an Engineer, Mathematician, and Architect with leading technology companies and laboratories.
 
 Sign up for my maths or computer science course.
 - [Hour based 1:1 Maths and Software training](https://buy.stripe.com/4gw29YguIc2Of7i7sv)
 - [Full Stack 1:1 Engineering Course](https://buy.stripe.com/aEUaGudiwaYK2kwaEI)
-
 
 ## Areas of expertise
 
@@ -34,6 +31,8 @@ Sign up for my maths or computer science course.
 - $100 million reconciled via financial systems
 - $300m IPO as Software Architect
 - 3 inspired to study mathematics
+- global video streaming service
+- 8 years of experience with GCP and 4 with AWS
 
 # Technologies Deployed to Production
 * Web and Networks - Javascript, Nodejs, React
