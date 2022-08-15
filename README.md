@@ -23,10 +23,9 @@ Sign up for my maths or computer science course.
 - 2000+ code commits to live production systems
 - 1000+ live public speaking events to 20,000+ people
 - 20 software engineers trained in 100+ 1:1 lessons
-- 20 software engineers trained in 100s 1:1 lessons
 - 10 software engineering teams trained in TDD, CI/CD, and DevOps
 - 5 mentorships lasting over 5 years
-- 3 organisations built from the few devs to 100+ engineers
+- 3 organizations built from the few devs to 100+ engineers
 - 3 leadership positions in wartime, laboratory, and engineering environments
 - $100 million reconciled via financial systems
 - $300m IPO as Software Architect
