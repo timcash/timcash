@@ -1,18 +1,34 @@
 # Available for Contract Full Time and Training
-20 years of experience building software. Training over 100 developers and engineers. 1000+ public speaking events. Developing systems as an Engineer, Mathematician, and Architect with leading technology companies and laboratories.
+Here to build software with the world! Training over 100 developers and engineers. 1000+ public speaking events. Developing systems as an Engineer, Mathematician, and Architect with leading technology companies and laboratories. Here are a few of my recent projects looking for help.
+
+### tools for modding openai codex
+- nodejs
+- [openai codex mods](https://github.com/timcash/openai2)
+### soil soilspectroscopy database loader and geospatial vis
+- nodejs sqllite d3 and uber h3 for generating geoJSON and visualizing soil data
+- [soil soilspectroscopy](https://github.com/mejia-code/soil_data_research)
+### small nodejs http server 
+- for quick mods and teaching others about testing and the web
+- [small_http](https://github.com/timcash/small_http)
 
 Sign up for my maths or computer science course.
 - [Hour based 1:1 Maths and Software training](https://buy.stripe.com/4gw29YguIc2Of7i7sv)
 - [Full Stack 1:1 Engineering Course](https://buy.stripe.com/aEUaGudiwaYK2kwaEI)
 
-## Areas of expertise
+# Join our discord
+https://discord.gg/v4CCkcVC
 
+# Personal Site
+See https://timcash.io for contact information
+
+# Areas of expertise
+
+1. Automated Testing
 1. Data Engineering
 1. Web Applications
 1. Geospatial Modeling
 1. Network Architecture
 1. Engineering leadership
-1. Automated Testing
 
 # Milestones & Highlights
 
@@ -82,14 +98,6 @@ These are written with friends and colleagues in mind. The code was written as a
 https://chromatic.systems
 
 My wife and I are building a school to teach p2p technologies and mathematics. We have over 20 modules now designed as interactive apps with popular open source libraries integrated as a starting point. The system has a built-in editor that makes it easy to code up new pages and deploy them to a global content delivery network without anything but the Web. The front end is all minimal javascript and some web-components without any framework. The backend is redis graph and soon a bit of hypercore-protocol. Our goal is step by step mathematical, computer science, and physics content that is easy to edit all through code on the site.
-
-### Join our discord
-
-https://discord.gg/v4CCkcVC
-
-# Personal Site
-
-See https://timcash.io for contact information
 
 # Maths Mentoring
 
