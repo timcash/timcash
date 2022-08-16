@@ -19,7 +19,8 @@ for quick mods and teaching others about testing and the web
 https://discord.gg/v4CCkcVC
 
 # Personal Site
-See https://timcash.io for contact information
+https://timcash.io
+- building it from scratch with no frameworks for fun.
 
 # Areas of expertise
 
