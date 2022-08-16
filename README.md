@@ -8,10 +8,10 @@ Here to build software with the world! Training over 100 developers and engineer
 - nodejs sqllite d3 and uber h3 for generating geoJSON and visualizing soil data
 - [soil soilspectroscopy](https://github.com/mejia-code/soil_data_research)
 ### small nodejs http server 
-- for quick mods and teaching others about testing and the web
+for quick mods and teaching others about testing and the web
 - [small_http](https://github.com/timcash/small_http)
 
-Sign up for my maths or computer science course.
+# Sign up for my maths or computer science course.
 - [Hour based 1:1 Maths and Software training](https://buy.stripe.com/4gw29YguIc2Of7i7sv)
 - [Full Stack 1:1 Engineering Course](https://buy.stripe.com/aEUaGudiwaYK2kwaEI)
 
