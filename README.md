@@ -57,7 +57,7 @@ They are languages of a different category. A real beauty of language is when we
 1. A * 0 = 0
 1. A + 0 = A
 1. A + -A = 0
-> a machine learning algorim filled in 4 of the above statements, by using the underlying mechamism of these statesments. That is increadible.
+> a machine learning algorim filled in 4 of the above statements, by using the underlying mechamism of these statesments. That is incredible!
 
 ## 1e9 & Estimation
 A single page guide to large numbers and estimation
