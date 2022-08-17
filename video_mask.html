@@ -1,0 +1,40 @@
+<!-- video_mask.html -->
+<!-- a simple webpage with a canvas element -->
+<html>
+<head>
+<title>video_mask.html</title>
+<style>
+body {
+  /* no margin or padding */
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+</style>
+</head>
+<body>
+<canvas id="canvas" width="640" height="480"></canvas>
+</body>
+<script>
+// get the canvas element
+var canvas = document.getElementById("canvas");
+// get the canvas context
+var ctx = canvas.getContext("2d");
+// set width and height of canvas to full screen
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+w = canvas.width;
+h = canvas.height;
+// draw a radial gradient from white alpha 100 to black alpha 0
+var gradient = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, w/2);
+gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+gradient.addColorStop(0.3, "rgba(255, 255, 255, 0.8)");
+gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.7center)");
+gradient.addColorStop(0.7, "rgba(0, 0, 0, 0)");
+// set the fill style to the gradient
+ctx.fillStyle = gradient;
+// draw a rectangle to fill the canvas
+ctx.fillRect(0, 0, w, h);
+
+</script>
+</html>
