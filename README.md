@@ -37,6 +37,9 @@ Live feedback, ambient learning, exploration supported by a group of mentors and
 ## Why learning 1 on 1 and pair programming
 Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. We work with real systems and code to develop a style that fits your needs. After the inital setup of the workspace there are no taxonomies or hierarchies, no checklists or rubrics. Maybe it will be sound, poetry, or a game. Maybe it will be a new way to think about the world.
 
+## Music & Math
+![classical guitar](images/guitar.gif)
+
 ## Exploration with a new compass
 ![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
 > Global soil sample data streamed into sqllite and transformed into geoJSON

@@ -8,7 +8,7 @@ body {
   /* no margin or padding */
   margin: 0;
   padding: 0;
-  background-color: black;
+  /* background-color: black; */
 }
 </style>
 </head>
@@ -20,21 +20,31 @@ body {
 var canvas = document.getElementById("canvas");
 // get the canvas context
 var ctx = canvas.getContext("2d");
-// set width and height of canvas to full screen
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const OFFSET = 30;
+// set width and height of canvas to full screen - offset
+canvas.width = window.innerWidth - OFFSET*2;
+canvas.height = window.innerHeight - OFFSET*2;
 w = canvas.width;
 h = canvas.height;
+
+// position the canvas absolute from the top+ offset left+ offset
+canvas.style.position = "absolute";
+canvas.style.top = OFFSET + "px";
+canvas.style.left = OFFSET + "px";
+
 // draw a radial gradient from white alpha 100 to black alpha 0
-var gradient = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, w/2);
+const x0 = w/2 - OFFSET;
+const y0 = h/2 - OFFSET;
+const x1 = w/2 + OFFSET;
+const y1 = h/2 + OFFSET;
+var gradient = ctx.createRadialGradient(x0, y0, 0, x1, y1, w/2);
 gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
 gradient.addColorStop(0.3, "rgba(255, 255, 255, 0.8)");
-gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.7center)");
-gradient.addColorStop(0.7, "rgba(0, 0, 0, 0)");
+gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.7)");
+gradient.addColorStop(0.6, "rgba(0, 0, 0, 0)");
 // set the fill style to the gradient
 ctx.fillStyle = gradient;
 // draw a rectangle to fill the canvas
 ctx.fillRect(0, 0, w, h);
-
 </script>
 </html>
