@@ -1,5 +1,5 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. They are languages, and something different. Not only like verbal or wittern langauge and not only like a musical or sign language. If used as the fundemental units to build on they can describe with precision not only thier meaning but also a program that can unfold over time. Sharing these programs is a new way to work together. Below is a small collection of my work, and work that builds on others. My partner and I are looking for students. We teach in via discord or keet.io in the evenings GMT-5
+Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. They are languages, and something different. Not only like verbal or wittern langauge and not only like a musical or sign language. If used as the fundemental units to build on they can describe with precision not only thier meaning but also a program that can unfold over time. Sharing these programs is a new way to work together. Below is a small collection of my work, and work that builds on others. My partner and I are looking for students. We teach via discord or keet.io in the evenings GMT-5
 
 `work in progress below`
 1. Rapid Maths Concept Exploration
@@ -60,7 +60,7 @@ They are languages of a different category. A real beauty of language is when we
 1. A * 0 = 0
 1. A + 0 = A
 1. A + -A = 0
-> a machine learning algorim filled in 4 of the above statements, by using the underlying mechamism of these statesments. That is increadible.
+> a machine learning algorim filled in 4 of the above statements, by using the underlying mechamism of these statesments. That is incredible!
 
 ## 1e9 & Estimation
 A single page guide to large numbers and estimation
