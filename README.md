@@ -92,6 +92,9 @@ https://timcash.io
 1. [Spherical Geometry](https://docs.google.com/presentation/d/1YeShF6Huqa8Gg0dKxskW1gGaoNqe31cqKSqKVMIVCGw/edit?usp=sharing)
 1. [Differential Equations](https://docs.google.com/presentation/d/1Oc3AyjkWyo-G3qGuagkPAGsdL5h7fWBMhZSXRufmAMA/edit?usp=sharing)
 
+![spherical geometry](images/spherical_geometry.png)
+![differential equations class](images/diff_eq1.png)
+
 ## Math + Code sketch
 
 These are written with friends and colleagues in mind. The code was written as a discussion. The coloring algorithm for a mandlebrot
