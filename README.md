@@ -1,22 +1,29 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. They are languages, and something different. Not only like verbal or wittern langauge and not only like a musical or sign language. If used as the fundemental units to build on they can describe with precision not only thier meaning but also a program that can unfold over time. Sharing these programs is a new way to work together. Below is a small collection of my work, and work that builds on others (OSS). My partner and I are looking for students. We teach via discord or keet.io in the evenings GMT-5
+Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. They are languages, and something different. Not only like verbal or wittern langauge and not only like a musical or sign language. If used as the fundemental units to build on they can describe with precision not only thier meaning but also a program that can unfold over time. Sharing these programs is a new way to work together. Below is a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5
 
-`work in progress below`
+##`work in progress below`
 1. Some Professional Highlights
 1. Libraries and Studies
 1. Chromatic Systems
 
-# Areas of expertise
+# Areas of Expertise
 
 1. Automated Testing
 1. Data Engineering
 1. Web Applications
 1. Geospatial Modeling
 1. Network Architecture
-1. Engineering leadership
+1. Engineering Leadership
+
+# Styles of Work
+1. Keep it simple - did you ship something?
+1. Pair Programming & Team Programming
+1. TDD
+1. CI/CD 
+1. Production Testing
 
 # Technologies Deployed to Production
-* Web and Networks - Javascript, Nodejs, React
+* Web - Javascript, Nodejs, React, web-componets
 * Cloudflare - Workers, KV
 * AWS - SQS, Lamda, S3, API Gateway
 * GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
@@ -31,6 +38,8 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Graph analysis - cytoscape
 1. Architecture BIM & CAD - IFC.js, three.js 
 1. User Interfaces - react, web-componets
+1. P2P networks - hypercore, ipfs
+2. Testing - Playwright
 
 # Milestones & Highlights
 - 3 inspired to study mathematics
@@ -39,11 +48,11 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 - Trillion element data-pipelines on two large projects
 - Billion user interactions on SaaS products
 - 8 projects currently running in production systems
-- > 12 data pipelines
-- > 2000 code commits to live production systems
-- > 1000 live public speaking events to 20,000+ people
-- > 20 software engineers trained in 100+ 1:1 lessons
-- > 10 software engineering teams trained in TDD, CI/CD, and DevOps
+- 12 data pipelines
+- 2000+ code commits to live production systems
+- 1000+ live public speaking events to 20,000+ people
+- 20 software engineers trained in 100+ 1:1 lessons
+- 10 software engineering teams trained in TDD, CI/CD, and DevOps
 - 5 mentorships lasting over 5 years
 - 3 organizations built from the few devs to 100+ engineers
 - 3 leadership positions in wartime, laboratory, and engineering environments
@@ -52,8 +61,8 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 - 1 video streaming service
 - 8 years of experience with GCP and 4 with AWS
 - 3 continents & > 24 Cities
-- > 26 math classes
-- > 400 attempts at current classical guitar song
+- 26 math classes
+- 400+ attempts at current classical guitar song
 
 
 
