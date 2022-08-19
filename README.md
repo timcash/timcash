@@ -4,7 +4,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 `work in progress below`
 1. Some Professional Highlights
 1. Libraries and Studies
-1. Examples of Content
+1. Chromatic Systems
 
 # Areas of expertise
 
@@ -14,25 +14,6 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Geospatial Modeling
 1. Network Architecture
 1. Engineering leadership
-
-# Milestones & Highlights
-
-- Building with national labs and dev teams from around the world
-- Trillion+ element data-pipelines on two large projects
-- Billion+ user interactions on SaaS products
-- 8 projects currently running in production systems
-- 2000+ code commits to live production systems
-- 1000+ live public speaking events to 20,000+ people
-- 20 software engineers trained in 100+ 1:1 lessons
-- 10 software engineering teams trained in TDD, CI/CD, and DevOps
-- 5 mentorships lasting over 5 years
-- 3 organizations built from the few devs to 100+ engineers
-- 3 leadership positions in wartime, laboratory, and engineering environments
-- $100 million reconciled via financial systems
-- $300m IPO as Software Architect
-- 3 inspired to study mathematics
-- 1 Video streaming service
-- 8 years of experience with GCP and 4 with AWS
 
 # Technologies Deployed to Production
 * Web and Networks - Javascript, Nodejs, React
@@ -50,6 +31,31 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Graph analysis - cytoscape
 1. Architecture BIM & CAD - IFC.js, three.js 
 1. User Interfaces - react, web-componets
+
+# Milestones & Highlights
+- 3 inspired to study mathematics
+- 5 algorithmic art projects
+- Building with national labs and dev teams from around the world
+- Trillion element data-pipelines on two large projects
+- Billion user interactions on SaaS products
+- 8 projects currently running in production systems
+- > 12 data pipelines
+- > 2000 code commits to live production systems
+- > 1000 live public speaking events to 20,000+ people
+- > 20 software engineers trained in 100+ 1:1 lessons
+- > 10 software engineering teams trained in TDD, CI/CD, and DevOps
+- 5 mentorships lasting over 5 years
+- 3 organizations built from the few devs to 100+ engineers
+- 3 leadership positions in wartime, laboratory, and engineering environments
+- $100m reconciled via financial systems
+- $300m IPO as Software Architect
+- 1 video streaming service
+- 8 years of experience with GCP and 4 with AWS
+- 3 continents & > 24 Cities
+- > 26 math classes
+- > 400 attempts at current classical guitar song
+
+
 
 ## tools for modding openai codex
 - nodejs
