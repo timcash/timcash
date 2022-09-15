@@ -1,5 +1,5 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. They are languages, and something different. Not only like verbal or written language and not only like a musical or sign language. If used as the fundamental units to build on they can describe with precision not only their meaning but also a program that can unfold over time. Sharing these programs is a new way to work together. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5
+Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5
 
 1. Some Professional Highlights
 1. Libraries and Studies
