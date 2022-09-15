@@ -15,11 +15,9 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Engineering Leadership
 
 # Patents
-ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
-DOCUMENT ID
-US 20210064812 A1
-DATE PUBLISHED
-2021-03-04
+### ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
+- DOCUMENT ID US 20210064812 A1
+- DATE PUBLISHED 2021-03-04
 
 # Styles of Work
 1. Keep it simple - did you ship something?
@@ -88,7 +86,7 @@ https://timcash.io
 1. [Spherical Geometry](https://docs.google.com/presentation/d/1YeShF6Huqa8Gg0dKxskW1gGaoNqe31cqKSqKVMIVCGw/edit?usp=sharing)
 1. [Differential Equations](https://docs.google.com/presentation/d/1Oc3AyjkWyo-G3qGuagkPAGsdL5h7fWBMhZSXRufmAMA/edit?usp=sharing)
 
-![spherical geometry](images/spherical_geometry.png)
+![spherical geometry](images/sphere_geo.png)
 ![differential equations class](images/diff_eq1.png)
 
 ## Math + Code sketch
@@ -117,7 +115,7 @@ Live feedback, ambient learning, exploration supported by a group of mentors and
 ## Why learning 1 on 1 and pair programming
 Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. We work with real systems and code to develop a style that fits your needs. After the inital setup of the workspace there are no taxonomies or hierarchies, no checklists or rubrics. Maybe it will be sound, poetry, or a game. Maybe it will be a new way to think about the world.
 
-## Exploration with a new compass
+## Geospacial Systems with Open Source
 ![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
 > Global soil sample data streamed into sqllite and transformed into geoJSON
 
