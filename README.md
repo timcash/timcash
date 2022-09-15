@@ -2,11 +2,10 @@
 Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5
 
 1. Some Professional Highlights
-1. Libraries and Studies
+1. OSS Libraries and Studies
 1. Chromatic Systems
 
 # Areas of Expertise
-
 1. Automated Testing
 1. Data Engineering
 1. Web Applications
@@ -29,6 +28,14 @@ See https://timcash.io for more information
 1. Full Stack Web Applications
 1. Numerical Simulations and Games
 1. Disrupting Communication Networks
+1. Introduction to Category Theory
+1. Introduction to Partial Differential Equations
+1. Introduction to Linear Algebra
+1. Introduction to Calculus
+1. Introduction to Probability and Statistics
+1. Introduction to Discrete Mathematics
+1. Introduction to Algorithms
+1. Introduction to Computer Science
 
 # Patents
 ### ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
@@ -95,6 +102,8 @@ https://timcash.io
 
 1. [Failables](https://www.npmjs.com/package/@pheasantplucker/failables)
 1. [Google Cloud Platform](https://github.com/pheasantplucker)
+1. [GCP Datastore](https://github.com/pheasantplucker/gc-datastore/blob/master/src/datastore.test.js)
+1. [Mars Rover](https://github.com/timcash/rover_hp)
 
 ## Writing & Presentations
 
