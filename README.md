@@ -14,6 +14,22 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Network Architecture
 1. Engineering Leadership
 
+# 1:1 Instruction in the following areas
+See https://timcash.io for more information
+- We use our own private self hosted encrytped network. During the class you get a key!
+1. Generative Art & Music
+1. Geospatial Systems
+1. Machine Learning
+1. Deep Neural Networks
+1. Genetic Algorithms
+1. Automated Testing
+1. Software Engineering
+1. Continuous Integration
+1. Video and Image Processing
+1. Full Stack Web Applications
+1. Numerical Simulations and Games
+1. Disrupting Communication Networks
+
 # Patents
 ### ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
 - DOCUMENT ID US 20210064812 A1
@@ -29,7 +45,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 # Technologies Deployed to Production
 * Web - Javascript, Nodejs, React, web-componets
 * Cloudflare - Workers, KV
-* AWS - SQS, Lamda, S3, API Gateway
+* AWS - SQS, Lamda, S3, API Gateway, EC2
 * GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
 * DevOps - Saltstack, Pulumi
 * DB - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
