@@ -14,6 +14,13 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Network Architecture
 1. Engineering Leadership
 
+# Patents
+ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
+DOCUMENT ID
+US 20210064812 A1
+DATE PUBLISHED
+2021-03-04
+
 # Styles of Work
 1. Keep it simple - did you ship something?
 1. Pair Programming & Team Programming
