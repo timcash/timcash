@@ -4,7 +4,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 ## Overview
 1. Some Professional Highlights
 1. OSS Libraries and Studies
-1. Chromatic Systems our school geospatial data and mathematics
+1. Chromatic Systems our school for geospatial data and mathematics
 
 # Areas of Expertise
 ## Software Architecture
