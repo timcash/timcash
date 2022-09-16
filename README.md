@@ -1,23 +1,52 @@
 # Welcome
 Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5
 
+## Overview
 1. Some Professional Highlights
 1. OSS Libraries and Studies
-1. Chromatic Systems
+1. Chromatic Systems our school geospatial data and mathematics
 
 # Areas of Expertise
+## Software Architecture
+1. Engineering Leadership
+1. Cloud Architecture
 1. Automated Testing
 1. Data Engineering
-1. Web Applications
 1. Geospatial Modeling
+1. Web Applications
+1. HTTP Servers
+1. Graph Databases
 1. Network Architecture
-1. Engineering Leadership
+1. Data Visualization
 
-# 1:1 Instruction in the following areas
+## US Intelligence Community
+1. Intelligence Operations
+1. Geospatial Analysis
+1. Synthetic Aperture Radar
+1. Tactical Communications
+1. Mission Planning
+1. Signals Intelligence
+1. Measurement and Signature Intelligence (MASINT)
+1. Social Network Analysis
+
+# Patents
+### ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
+- DOCUMENT ID US 20210064812 A1
+- DATE PUBLISHED 2021-03-04
+
+# Custom 1:1 instruction
 See https://timcash.io for more information
-- We use our own private self hosted encrytped network. During the class you get a key!
+## Why learning 1 on 1 and pair programming
+Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported mentors are keys to immersive education. The purpose of this system is to spark creativity and continuous re-categorification of knowledge.
+- no tests
+- no grades
+- no homework
+- We use our own private self hosted encrytped network. 
+- During the class you make a key!
+
 1. Generative Art & Music
 1. Geospatial Systems
+1. Cloud Architecture
 1. Machine Learning
 1. Deep Neural Networks
 1. Genetic Algorithms
@@ -28,26 +57,21 @@ See https://timcash.io for more information
 1. Full Stack Web Applications
 1. Numerical Simulations and Games
 1. Disrupting Communication Networks
-1. Introduction to Category Theory
-1. Introduction to Partial Differential Equations
-1. Introduction to Linear Algebra
-1. Introduction to Calculus
-1. Introduction to Probability and Statistics
-1. Introduction to Discrete Mathematics
-1. Introduction to Algorithms
-1. Introduction to Computer Science
+1. Category Theory
+1. Partial Differential Equations
+1. Linear Algebra
+1. Calculus
+1. Probability and Statistics
+1. Discrete Mathematics
+1. Algorithms
+1. Computer Science
 
-# Patents
-### ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
-- DOCUMENT ID US 20210064812 A1
-- DATE PUBLISHED 2021-03-04
-
-# Styles of Work
+# Skilled Work Techniques I Enjoy
 1. Keep it simple - did you ship something?
 1. Pair Programming & Team Programming
-1. TDD
-1. CI/CD 
-1. Production Testing
+1. Test Driven Design
+1. Continuous Integration and Delivery
+1. Testing in Production
 
 # Technologies Deployed to Production
 * Web - Javascript, Nodejs, React, web-componets
@@ -69,7 +93,6 @@ See https://timcash.io for more information
 2. Testing - Playwright
 
 ## tools for modding openai codex
-- nodejs
 - [openai codex mods](https://github.com/timcash/openai2)
 ## Soil Spectroscopy database loader and geospatial plot
 - nodejs sqllite d3 and uber h3 for generating geoJSON and visualizing soil data
@@ -99,11 +122,16 @@ https://timcash.io
 3. [Hypercore Protocol](https://github.com/timcash/hyperspace-demo)
 
 ## Javascript Published Packages
-
+A mix of projects with myself as a core author
 1. [Failables](https://www.npmjs.com/package/@pheasantplucker/failables)
 1. [Google Cloud Platform](https://github.com/pheasantplucker)
 1. [GCP Datastore](https://github.com/pheasantplucker/gc-datastore/blob/master/src/datastore.test.js)
+1. [GCP PubSub](https://github.com/Oakleon/oakpubsub)
 1. [Mars Rover](https://github.com/timcash/rover_hp)
+
+## Medium size team project on GCP
+Demostrates all the research and coordination around launching a project as a team on GCP.
+1. [Event processing job streams](https://github.com/autotrons/starspawn)
 
 ## Writing & Presentations
 
@@ -131,14 +159,6 @@ These are written with friends and colleagues in mind. The code was written as a
 Samples of integrating popular open source libs to get students up to speed quickly on contributing to real systems.
 https://chromatic.systems
 
-## Upgrading education systems
-Live feedback, ambient learning, exploration supported by a group of mentors and peers. The purpose of this system is to spark creativity and spontaneous re-categorification of knowledge.
-- no tests
-- no grades
-- no homework
-
-## Why learning 1 on 1 and pair programming
-Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. We work with real systems and code to develop a style that fits your needs. After the inital setup of the workspace there are no taxonomies or hierarchies, no checklists or rubrics. Maybe it will be sound, poetry, or a game. Maybe it will be a new way to think about the world.
 
 ## Geospacial Systems with Open Source
 ![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
