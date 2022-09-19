@@ -1,10 +1,33 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5
+Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5. 
 
 ## Overview
 1. Some Professional Highlights
 1. OSS Libraries and Studies
 1. Chromatic Systems our school for geospatial data and mathematics
+
+# Technologies Deployed to Production
+* Web - Javascript, Nodejs, React, web-componets
+* Cloudflare - Workers, KV
+* AWS - SQS, Lamda, S3, API Gateway, EC2
+* GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
+* DevOps - Saltstack, Pulumi
+* DB - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
+* C#, .NET
+* Python
+
+# I enjoy working with these open source projects
+1. Data visualization - Matplotlib, d3
+1. Geo-spatial - mapbox, turf, deck.gl
+1. Graph analysis - cytoscape
+1. Architecture BIM & CAD - IFC.js, three.js 
+1. User Interfaces - react, web-componets
+1. P2P networks - hypercore, ipfs
+2. Testing - Playwright
+
+## Geospacial Systems with Open Source
+![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
+> Global soil sample data streamed into sqllite and transformed into geoJSON
 
 # Areas of Expertise
 ## Software Architecture
@@ -36,11 +59,9 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 
 # Custom 1:1 instruction
 See https://timcash.io for more information
+
 ## Why learning 1 on 1 and pair programming
 Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported mentors are keys to immersive education. The purpose of this system is to spark creativity and continuous re-categorification of knowledge.
-- no tests
-- no grades
-- no homework
 - We use our own private self hosted encrytped network. 
 - During the class you make a key!
 
@@ -66,31 +87,12 @@ Building together can greatly accelerate learning. A small amount of time a few 
 1. Algorithms
 1. Computer Science
 
-# Skilled Work Techniques I Enjoy
+# How We Code
 1. Keep it simple - did you ship something?
 1. Pair Programming & Team Programming
 1. Test Driven Design
 1. Continuous Integration and Delivery
 1. Testing in Production
-
-# Technologies Deployed to Production
-* Web - Javascript, Nodejs, React, web-componets
-* Cloudflare - Workers, KV
-* AWS - SQS, Lamda, S3, API Gateway, EC2
-* GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
-* DevOps - Saltstack, Pulumi
-* DB - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
-* C#, .NET
-* Python
-
-# I enjoy working with these open source projects
-1. Data visualization - Matplotlib, d3
-1. Geo-spatial - mapbox, turf, deck.gl
-1. Graph analysis - cytoscape
-1. Architecture BIM & CAD - IFC.js, three.js 
-1. User Interfaces - react, web-componets
-1. P2P networks - hypercore, ipfs
-2. Testing - Playwright
 
 ## tools for modding openai codex
 - [openai codex mods](https://github.com/timcash/openai2)
@@ -158,11 +160,6 @@ These are written with friends and colleagues in mind. The code was written as a
 ## Project Background
 Samples of integrating popular open source libs to get students up to speed quickly on contributing to real systems.
 https://chromatic.systems
-
-
-## Geospacial Systems with Open Source
-![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
-> Global soil sample data streamed into sqllite and transformed into geoJSON
 
 ## Numbers come in many forms
 ![Earthy Fractals](images/composite.png)
