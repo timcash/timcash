@@ -1,10 +1,11 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us. We teach via discord or keet.io in the evenings GMT-5. 
+Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us via discord or keet.io in the evenings GMT-5.
 
 ## Overview
 1. Some Professional Highlights
 1. OSS Libraries and Studies
 1. Chromatic Systems our school for geospatial data and mathematics
+1. Personal Site https://timcash.io
 
 # Technologies Deployed to Production
 * Web - Javascript, Nodejs, React, web-componets
@@ -14,7 +15,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 * DevOps - Saltstack, Pulumi
 * DB - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
 * C#, .NET
-* Python
+* Python - Flask, Django, Matplotlib
 
 # I enjoy working with these open source projects
 1. Data visualization - Matplotlib, d3
@@ -23,14 +24,14 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Architecture BIM & CAD - IFC.js, three.js 
 1. User Interfaces - react, web-componets
 1. P2P networks - hypercore, ipfs
-2. Testing - Playwright
+1. Testing - Playwright
 
 ## Geospacial Systems with Open Source
 ![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
 > Global soil sample data streamed into sqllite and transformed into geoJSON
 
 # Areas of Expertise
-## Software Architecture
+1. Software Architecture
 1. Engineering Leadership
 1. Cloud Architecture
 1. Automated Testing
@@ -42,7 +43,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Network Architecture
 1. Data Visualization
 
-## US Intelligence Community
+## US Intelligence Community Experience
 1. Intelligence Operations
 1. Geospatial Analysis
 1. Synthetic Aperture Radar
@@ -57,7 +58,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 - DOCUMENT ID US 20210064812 A1
 - DATE PUBLISHED 2021-03-04
 
-# Custom 1:1 instruction
+# 1:1 Math & Software instruction
 See https://timcash.io for more information
 
 ## Why learning 1 on 1 and pair programming
@@ -65,6 +66,7 @@ Building together can greatly accelerate learning. A small amount of time a few 
 - We use our own private self hosted encrytped network. 
 - During the class you make a key!
 
+# Subjects I Enjoy Teaching
 1. Generative Art & Music
 1. Geospatial Systems
 1. Cloud Architecture
@@ -94,6 +96,8 @@ Building together can greatly accelerate learning. A small amount of time a few 
 1. Continuous Integration and Delivery
 1. Testing in Production
 
+# Libraries and Open Source Projects
+
 ## tools for modding openai codex
 - [openai codex mods](https://github.com/timcash/openai2)
 ## Soil Spectroscopy database loader and geospatial plot
@@ -111,9 +115,7 @@ for quick mods and teaching others about testing and the web
 ## Join our discord
 https://discord.gg/v4CCkcVC
 
-## Personal Site
-https://timcash.io
-- building it from scratch with no frameworks for fun.
+
 
 # Other projects
 
