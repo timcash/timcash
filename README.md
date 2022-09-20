@@ -15,6 +15,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 * DevOps - Saltstack, Pulumi
 * DB - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
 * C#, .NET
+* 1x golang project deployed
 * Python - Flask, Django, Matplotlib
 
 # I enjoy working with these open source projects
@@ -26,7 +27,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. P2P networks - hypercore, ipfs
 1. Testing - Playwright
 
-## Geospacial Systems with Open Source
+## Geospacial Systems with Open Source Data
 ![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
 > Global soil sample data streamed into sqllite and transformed into geoJSON
 
@@ -43,7 +44,7 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 1. Network Architecture
 1. Data Visualization
 
-## US Intelligence Community Experience
+# Geospatial Community Experience
 1. Intelligence Operations
 1. Geospatial Analysis
 1. Synthetic Aperture Radar
