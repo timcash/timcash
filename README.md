@@ -1,11 +1,28 @@
 # Welcome
 Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us via discord or keet.io in the evenings GMT-5.
 
+![A globe partitioned into hexagons](images/geotools.png)
+
+## Rho
+This is my long term project to build a Geospatial Intelligence Platform
+https://github.com/chromatic-systems/rho
+1. Geospatial processing and publishing code notebook
+1. Peer-to-Peer Mesh
+1. Integrated Machine Learning code assistant (optional)
+1. Point to Point Encryption
+1. Torrent style replication
+1. Save to published in seconds
+1. No Cloud services required
+1. Uncensorable
+
+## Geospacial Systems with Open Source Data
+![A globe partitioned into hexagons](images/d3_h3_soil.png)
+> Global soil sample data streamed into geoJSON
+
 ## Overview
 1. Some Professional Highlights
 1. OSS Libraries and Studies
 1. Chromatic Systems our school for geospatial data and mathematics
-1. Personal Site https://timcash.io
 
 # Technologies Deployed to Production
 * Web - Javascript, Nodejs, React, web-componets
@@ -13,23 +30,19 @@ Hello, I'm Tim. Software and Mathematics are a life long process of learning for
 * AWS - SQS, Lamda, S3, API Gateway, EC2
 * GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
 * DevOps - Saltstack, Pulumi
-* DB - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
-* C#, .NET
-* 1x golang project deployed
+* Data - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
+* Microsoft - C#, .NET
+* Golang - https://ebitengine.org/
 * Python - Flask, Django, Matplotlib
 
-# I enjoy working with these open source projects
+# Open Source Projects Deployed
 1. Data visualization - Matplotlib, d3
-1. Geo-spatial - mapbox, turf, deck.gl
+1. Geo-spatial - mapbox, turf, deck.gl, globe.gl, d3
 1. Graph analysis - cytoscape
 1. Architecture BIM & CAD - IFC.js, three.js 
 1. User Interfaces - react, web-componets
 1. P2P networks - hypercore, ipfs
-1. Testing - Playwright
-
-## Geospacial Systems with Open Source Data
-![A globe partitioned into hexagons](images/soilsite_d3_h3.png)
-> Global soil sample data streamed into sqllite and transformed into geoJSON
+1. UX Testing - Playwright
 
 # Areas of Expertise
 1. Software Architecture
@@ -64,8 +77,6 @@ See https://timcash.io for more information
 
 ## Why learning 1 on 1 and pair programming
 Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported mentors are keys to immersive education. The purpose of this system is to spark creativity and continuous re-categorification of knowledge.
-- We use our own private self hosted encrytped network. 
-- During the class you make a key!
 
 # Subjects I Enjoy Teaching
 1. Generative Art & Music
@@ -166,7 +177,7 @@ https://chromatic.systems
 
 ## Numbers come in many forms
 ![Earthy Fractals](images/composite.png)
-> A study of complex numbers, fractals and coloring algorithms. Written from scratch in javascript. The coloring algorithm was challenging and fun. Three hours of code into this program taught me more than three months of college algebra.
+> A study of complex numbers, fractals and coloring algorithms. Written from scratch in javascript. The coloring algorithm was challenging and fun.
 
 ## Stream and image of mars rover cameras
 ![rover image loop](images/rover.gif)
