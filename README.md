@@ -1,5 +1,15 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). My partner and I are looking for other learners to join us via discord or keet.io in the evenings GMT-5.
+Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). Join us via discord or keet.io in the evenings GMT-5. 
+
+My work in focused on the following areas:
+1. Software Architecture
+1. Geospatial Information Systems
+1. Actionable Intelligence
+1. Applied Mathematics
+1. Machine Learning
+1. Peer to Peer Networks & Darknets
+
+I have over 20 years experience publishing Geospatial Intelligence with custom and open source software.
 
 ![A globe partitioned into hexagons](images/geotools.png)
 
@@ -17,12 +27,9 @@ https://github.com/chromatic-systems/rho
 
 ## Geospacial Systems with Open Source Data
 ![A globe partitioned into hexagons](images/d3_h3_soil.png)
-> Global soil sample data streamed into geoJSON
+Global soil sample data streamed into geoJSON, for more information visit
+- [soil soilspectroscopy](https://github.com/mejia-code/soil_data_research)
 
-## Overview
-1. Some Professional Highlights
-1. OSS Libraries and Studies
-1. Chromatic Systems our school for geospatial data and mathematics
 
 # Technologies Deployed to Production
 * Web - Javascript, Nodejs, React, web-componets
