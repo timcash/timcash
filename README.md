@@ -28,7 +28,7 @@ https://github.com/chromatic-systems/rho
 ## Global Soil Data Study
 ![A globe partitioned into hexagons](images/d3_h3_soil.png)
 - Global soil sample data streamed into geoJSON
-- [soil soilspectroscopy](https://github.com/mejia-code/soil_data_research)
+- [Soil Spectroscopy](https://github.com/mejia-code/soil_data_research)
 
 
 # Technologies Deployed to Production
