@@ -34,10 +34,10 @@ https://github.com/chromatic-systems/rho
 1. No Cloud services required
 1. Integrated Machine Learning code assistant (optional)
 
-## Geospacial Systems with Open Source Data
+## Global Soil Data Study
 ![A globe partitioned into hexagons](images/d3_h3_soil.png)
-Global soil sample data streamed into geoJSON, for more information visit
-- [soil soilspectroscopy](https://github.com/mejia-code/soil_data_research)
+- Global soil sample data streamed into geoJSON
+- [Soil Spectroscopy](https://github.com/mejia-code/soil_data_research)
 
 
 # Technologies Deployed to Production
