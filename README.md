@@ -1,8 +1,9 @@
 # Welcome
-Hello, I'm Tim. Check out my current project `Rho` a system for peer-to-peer Geospatial Intelligence. 
+Hello, I'm Tim.
 
-Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source. 
+Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source.
 
+My current project `Rho` a system for peer-to-peer Geospatial Intelligence. 
 ![A globe partitioned into hexagons](images/geotools.png)
 
 # Services I offer
@@ -11,7 +12,7 @@ Software and Mathematics are a life long process of learning for me. This site h
 1. Software Architecture
 1. Cloud Architecture
 1. Automated Testing
-1. Geospatial Modeling
+1. Geospatial Intelligence
 1. Web Applications
 1. HTTP Servers
 1. Graph Databases & Knowledge Graphs
