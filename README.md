@@ -1,29 +1,38 @@
 # Welcome
-Hello, I'm Tim. Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on others (OSS). Join us via discord or keet.io in the evenings GMT-5. 
+Hello, I'm Tim. Check out my current project `Rho` a system for peer-to-peer Geospatial Intelligence. 
 
-My work in focused on the following areas:
-1. Software Architecture
-1. Geospatial Information Systems
-1. Actionable Intelligence
-1. Applied Mathematics
-1. Machine Learning
-1. Peer to Peer Networks & Darknets
-
-I have over 20 years experience publishing Geospatial Intelligence with custom and open source software.
+Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source. 
 
 ![A globe partitioned into hexagons](images/geotools.png)
+
+# Services I offer
+1. Data Engineering
+1. Lean Product Development
+1. Software Architecture
+1. Cloud Architecture
+1. Automated Testing
+1. Geospatial Modeling
+1. Web Applications
+1. HTTP Servers
+1. Graph Databases & Knowledge Graphs
+1. Network Architecture
+1. Data Visualization
+
+Join me via discord or keet.io in the evenings GMT-5.
+https://discord.gg/v4CCkcVC
 
 ## Rho
 This is my long term project to build a Geospatial Intelligence Platform
 https://github.com/chromatic-systems/rho
-1. Geospatial processing and publishing code notebook
+1. Geospatial processing and publishing 
+1. Publish in seconds
+1. Code notebook
 1. Peer-to-Peer Mesh
-1. Integrated Machine Learning code assistant (optional)
+1. Public Key Cryptography
 1. Point to Point Encryption
 1. Torrent style replication
-1. Save to published in seconds
 1. No Cloud services required
-1. Uncensorable
+1. Integrated Machine Learning code assistant (optional)
 
 ## Geospacial Systems with Open Source Data
 ![A globe partitioned into hexagons](images/d3_h3_soil.png)
@@ -32,58 +41,43 @@ Global soil sample data streamed into geoJSON, for more information visit
 
 
 # Technologies Deployed to Production
-* Web - Javascript, Nodejs, React, web-componets
-* Cloudflare - Workers, KV
-* AWS - SQS, Lamda, S3, API Gateway, EC2
-* GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
-* DevOps - Saltstack, Pulumi
-* Data - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
-* Microsoft - C#, .NET
-* Golang - https://ebitengine.org/
-* Python - Flask, Django, Matplotlib
-
-# Open Source Projects Deployed
+1. Web - Javascript, Nodejs, React, web-componets
+1. Cloudflare - Workers, KV
+1. AWS - SQS, Lamda, S3, API Gateway, EC2
+1. GCP - BigQuery, PubSub, Compute Engine, Cloud Storage, App Engine
+1. DevOps - Saltstack, Pulumi
+1. Data - ElasticSearch, Redis, Postgres, Cassandra, Oracle, Kafka
+1. Microsoft - C#, .NET
+1. Golang - https://ebitengine.org/
+1. Python - Flask, Django, Matplotlib
 1. Data visualization - Matplotlib, d3
 1. Geo-spatial - mapbox, turf, deck.gl, globe.gl, d3
-1. Graph analysis - cytoscape
+1. Graph analysis - cytoscape.js
 1. Architecture BIM & CAD - IFC.js, three.js 
 1. User Interfaces - react, web-componets
 1. P2P networks - hypercore, ipfs
 1. UX Testing - Playwright
-
-# Areas of Expertise
-1. Software Architecture
-1. Engineering Leadership
-1. Cloud Architecture
-1. Automated Testing
-1. Data Engineering
-1. Geospatial Modeling
-1. Web Applications
-1. HTTP Servers
-1. Graph Databases
-1. Network Architecture
-1. Data Visualization
+1. Point Clouds - Potree
 
 # Geospatial Community Experience
 1. Intelligence Operations
 1. Geospatial Analysis
 1. Synthetic Aperture Radar
-1. Tactical Communications
 1. Mission Planning
 1. Signals Intelligence
-1. Measurement and Signature Intelligence (MASINT)
 1. Social Network Analysis
+1. Measurement and Signature Intelligence (MASINT)
 
 # Patents
-### ADAPTIVE PROCESSING AND CONTENT CONTROL SYSTEM
+### Adaptive Processing and Content Control System
 - DOCUMENT ID US 20210064812 A1
 - DATE PUBLISHED 2021-03-04
 
-# 1:1 Math & Software instruction
+# 1:1 Math & Software Tutoring
 See https://timcash.io for more information
 
-## Why learning 1 on 1 and pair programming
-Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported mentors are keys to immersive education. The purpose of this system is to spark creativity and continuous re-categorification of knowledge.
+## Learning 1 on 1 and pair programming
+Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported by mentors are keys to immersive education.
 
 # Subjects I Enjoy Teaching
 1. Generative Art & Music
@@ -108,7 +102,7 @@ Building together can greatly accelerate learning. A small amount of time a few 
 1. Algorithms
 1. Computer Science
 
-# How We Code
+# Development Style
 1. Keep it simple - did you ship something?
 1. Pair Programming & Team Programming
 1. Test Driven Design
@@ -116,25 +110,24 @@ Building together can greatly accelerate learning. A small amount of time a few 
 1. Testing in Production
 
 # Libraries and Open Source Projects
-
-## tools for modding openai codex
+### Binary Search Tree (BST)
+- Simple Binary Search Tree implementation in Javascript
+- [Binary Search Tree bst.js](https://github.com/timcash/bst.js)
+### Tools for modding openai codex
 - [openai codex mods](https://github.com/timcash/openai2)
-## Soil Spectroscopy database loader and geospatial plot
-- nodejs sqllite d3 and uber h3 for generating geoJSON and visualizing soil data
+### Soil Spectroscopy database loader and geospatial plot
+1. Nodejs sqllite d3 and h3.js
+1. Generates GeoJSON for visualizing soil data
 - [soil soilspectroscopy](https://github.com/mejia-code/soil_data_research)
-![]()
-## small nodejs http server 
-for quick mods and teaching others about testing and the web
+## Small hackable nodejs http server 
+1. Great for quick mods and 
+1. Easy to manipulate etags, cookies, and headers
+1. Teach others about testing and the web
 - [small_http](https://github.com/timcash/small_http)
 
-## Sign up for our course                   
+## Sign up for my course                   
 - [Hour based 1:1 Maths and Software training](https://buy.stripe.com/4gw29YguIc2Of7i7sv)
 - [Full Stack 1:1 Engineering Course](https://buy.stripe.com/aEUaGudiwaYK2kwaEI)
-
-## Join our discord
-https://discord.gg/v4CCkcVC
-
-
 
 # Other projects
 
@@ -174,13 +167,8 @@ These are written with friends and colleagues in mind. The code was written as a
 1. [Mutli Circles](https://github.com/timcash/multicircles)
 
 # Chromatic Systems
-## A School for Geospatial Systems Software and Mathematics on Encrypted Peer-to-Peer Networks
-![A globe partitioned into hexagons](./images/logo_ml_duo.png)
-> ML variation (left) Our algorithm (right)
-
-## Project Background
-Samples of integrating popular open source libs to get students up to speed quickly on contributing to real systems.
-https://chromatic.systems
+![logo](./images/logo_ml_duo.png)
+> https://chromatic.systems
 
 ## Numbers come in many forms
 ![Earthy Fractals](images/composite.png)
