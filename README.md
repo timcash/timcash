@@ -1,19 +1,19 @@
 # Welcome
 Hello, I'm Tim.
 
-Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source. To sign up for my course see (https://timcash.io)
+Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source.
 
 ![A globe partitioned into hexagons](images/geotools.png)
 
 # Services I offer
 1. Robotic Cell Design and Deployment
 1. Machine Learning for Robotic Tasks
+1. Geospatial Intelligence System Design
 1. Data Engineering
 1. Lean Product Development
 1. Software Architecture
 1. Cloud Architecture
 1. Automated Testing
-1. Geospatial Intelligence
 1. Web Applications
 1. Graph Databases & Knowledge Graphs
 1. Network Architecture
