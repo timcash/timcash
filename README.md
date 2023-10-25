@@ -1,12 +1,13 @@
 # Welcome
 Hello, I'm Tim.
 
-Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source.
+Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source. To sign up for my course see (https://timcash.io)
 
-My current project `Rho` a system for peer-to-peer Geospatial Intelligence. 
 ![A globe partitioned into hexagons](images/geotools.png)
 
 # Services I offer
+1. Robotic Cell Design and Deployment
+1. Machine Learning for Robotic Tasks
 1. Data Engineering
 1. Lean Product Development
 1. Software Architecture
@@ -14,32 +15,37 @@ My current project `Rho` a system for peer-to-peer Geospatial Intelligence.
 1. Automated Testing
 1. Geospatial Intelligence
 1. Web Applications
-1. HTTP Servers
 1. Graph Databases & Knowledge Graphs
 1. Network Architecture
 1. Data Visualization
 
-Join me via discord or keet.io in the evenings GMT-5.
-https://discord.gg/v4CCkcVC
-
-## Rho
-This is my long term project to build a Geospatial Intelligence Platform
-https://github.com/chromatic-systems/rho
-1. Geospatial processing and publishing 
-1. Publish in seconds
-1. Code notebook
-1. Peer-to-Peer Mesh
-1. Public Key Cryptography
-1. Point to Point Encryption
-1. Torrent style replication
-1. No Cloud services required
-1. Integrated Machine Learning code assistant (optional)
+# Subjects I Enjoy Teaching
+1. Generative Art & Music
+1. Geospatial Systems
+1. Cloud Architecture
+1. Machine Learning
+1. Deep Neural Networks
+1. Genetic Algorithms
+1. Automated Testing
+1. Software Engineering
+1. Continuous Integration
+1. Video and Image Processing
+1. Full Stack Web Applications
+1. Numerical Simulations and Games
+1. Disrupting Communication Networks
+1. Category Theory
+1. Partial Differential Equations
+1. Linear Algebra
+1. Calculus
+1. Probability and Statistics
+1. Discrete Mathematics
+1. Algorithms
+1. Computer Science
 
 ## Global Soil Data Study
 ![A globe partitioned into hexagons](images/d3_h3_soil.png)
 - Global soil sample data streamed into geoJSON
 - [Soil Spectroscopy](https://github.com/mejia-code/soil_data_research)
-
 
 # Technologies Deployed to Production
 1. Web - Javascript, Nodejs, React, web-componets
@@ -79,29 +85,6 @@ See https://timcash.io for more information
 
 ## Learning 1 on 1 and pair programming
 Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported by mentors are keys to immersive education.
-
-# Subjects I Enjoy Teaching
-1. Generative Art & Music
-1. Geospatial Systems
-1. Cloud Architecture
-1. Machine Learning
-1. Deep Neural Networks
-1. Genetic Algorithms
-1. Automated Testing
-1. Software Engineering
-1. Continuous Integration
-1. Video and Image Processing
-1. Full Stack Web Applications
-1. Numerical Simulations and Games
-1. Disrupting Communication Networks
-1. Category Theory
-1. Partial Differential Equations
-1. Linear Algebra
-1. Calculus
-1. Probability and Statistics
-1. Discrete Mathematics
-1. Algorithms
-1. Computer Science
 
 # Development Style
 1. Keep it simple - did you ship something?
