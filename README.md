@@ -1,6 +1,4 @@
 # Welcome
-Hello, I'm Tim.
-
 Software and Mathematics are a life long process of learning for me. This site has a small collection of my work, and work that builds on open source.
 
 ![A globe partitioned into hexagons](images/geotools.png)
