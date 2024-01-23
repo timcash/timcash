@@ -4,9 +4,9 @@ Software and Mathematics are a life long process of learning for me. This site h
 ![A globe partitioned into hexagons](images/geotools.png)
 
 # Services I offer
-1. Robotic Cell Design and Deployment
-1. Machine Learning for Robotic Tasks
 1. Geospatial Intelligence System Design
+1. Robotic Cell Design and Deployment
+1. Machine Learning for Manufacturing
 1. Data Engineering
 1. Lean Product Development
 1. Software Architecture
@@ -29,8 +29,7 @@ Software and Mathematics are a life long process of learning for me. This site h
 1. Continuous Integration
 1. Video and Image Processing
 1. Full Stack Web Applications
-1. Numerical Simulations and Games
-1. Disrupting Communication Networks
+1. Numerical Simulations
 1. Category Theory
 1. Partial Differential Equations
 1. Linear Algebra
@@ -38,7 +37,6 @@ Software and Mathematics are a life long process of learning for me. This site h
 1. Probability and Statistics
 1. Discrete Mathematics
 1. Algorithms
-1. Computer Science
 
 ## Global Soil Data Study
 ![A globe partitioned into hexagons](images/d3_h3_soil.png)
@@ -56,7 +54,7 @@ Software and Mathematics are a life long process of learning for me. This site h
 1. Golang - https://ebitengine.org/
 1. Python - Flask, Django, Matplotlib
 1. Data visualization - Matplotlib, d3
-1. Geo-spatial - mapbox, turf, deck.gl, globe.gl, d3
+1. Geospatial - mapbox, turf, deck.gl, globe.gl, d3
 1. Graph analysis - cytoscape.js
 1. Architecture BIM & CAD - IFC.js, three.js 
 1. User Interfaces - react, web-componets
@@ -83,13 +81,6 @@ See https://timcash.io for more information
 
 ## Learning 1 on 1 and pair programming
 Building together can greatly accelerate learning. A small amount of time a few days a week practicing a skill. Live feedback, ambient learning, and exploration supported by mentors are keys to immersive education.
-
-# Development Style
-1. Keep it simple - did you ship something?
-1. Pair Programming & Team Programming
-1. Test Driven Design
-1. Continuous Integration and Delivery
-1. Testing in Production
 
 # Libraries and Open Source Projects
 ### Binary Search Tree (BST)
